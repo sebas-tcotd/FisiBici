@@ -128,7 +128,7 @@ body {
   }
 }
 
-.seccion {
+/* .seccion {
   padding: 3rem 0;
 }
 
@@ -159,7 +159,7 @@ h3 {
   font-family: 'PT Sans', sans-serif;
   margin: 0;
   font-weight: 400;
-}
+} */
 
 .button {
   background: #0FB3D8;
@@ -179,17 +179,6 @@ h3 {
 .button:hover {
   background: #E0D9CE;
   color: black;
-}
-
-
-.button.transparente {
-  background-color: transparent;
-  border: 2px solid white;
-}
-
-.button.transparente:hover {
-  background-color: #fe4918;
-  border-color: #fe4918;
 }
 
 ul {
@@ -274,11 +263,11 @@ div.contenido-header {
 .site-header {
   display: grid;
   background: #E0D9CE;
-  height: 20vh;
+  height: 12vh;
 }
 
 .site-header div {
-  display: flex;
+  /*display: flex;*/
   justify-content: center;
   align-items: center;
 }
@@ -294,7 +283,13 @@ div.contenido-header {
   font-weight: 700;
 }
 
+.site-header a{
+  color: #222;
+  text-decoration: none;
+}
+
 .navegacion {
+  height: 8vh;
   background: rgba(171, 152, 122, 0.2);
   backdrop-filter: blur(50px);
   padding-right: 50%;
@@ -322,15 +317,15 @@ div.contenido-header {
 
 /*Cuerpo principal*/
 
-.grid-bicis{
+.grid-bicis {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 5rem;
   grid-template-rows: repeat(2, 1fr);
   justify-content: center;
 }
- 
+
 .bici-item {
   margin: auto;
   height: 35rem;
@@ -339,9 +334,9 @@ div.contenido-header {
 }
 
 .imagen-bici {
-  height: 25rem;
-  width: 25rem;
-  
+  /* height: 25rem;
+  width: 25rem; */
+
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 10px;
   background-position: center center;
@@ -349,20 +344,21 @@ div.contenido-header {
   background-image: url(../img/bici2.jpg);
 }
 
-.imagen-bici img{
-  
+.imagen-bici img {
+
   max-width: 100%;
   height: 100%;
   display: block;
   overflow: hidden;
   position: absolute;
   left: 0%;
-right: 0%;
-top: 0%;
-bottom: 25.73%;
-  
+  right: 0%;
+  top: 0%;
+  bottom: 25.73%;
+
 }
-.nombre-bici{
+
+.nombre-bici {
   margin: 0;
   font-size: 2.5rem;
   font-weight: 300;
@@ -374,9 +370,50 @@ bottom: 25.73%;
   font-size: 3rem;
 }
 
-/*Items cards*/
+.card {
+  background: transparent;
+  border: none;
+}
 
+.card-body {
+  text-align: center;
+}
 
+/* página shop*/
+.pag-shop {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.seccion-lateral {
+  width: 50rem;
+}
+
+.carrito {
+  padding: 2rem;
+  position: fixed;
+  right: 5rem;
+}
+
+.principal {
+  margin-left: 4.5rem;
+}
+
+/*Footer*/
+.site-footer {
+  height: 10rem;
+  background: rgb(65, 58, 47);
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.site-footer a {
+  color: white;
+  text-decoration: none;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
