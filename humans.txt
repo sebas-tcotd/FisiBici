@@ -3,6 +3,9 @@
 
 # TEAM
 
+    Sebastian Vargas Pizango -- Front-End Developer -- @sebas.tcotd
+    Mauricio Linares Purizaca -- Back-End Developer
+    Martín Rodriguez Cornejo -- Back-End Developer
     <name> -- <role> -- <twitter>
 
 # THANKS

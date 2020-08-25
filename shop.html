@@ -17,7 +17,9 @@
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="author" href="humans.txt" />
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=PT+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
@@ -31,26 +33,66 @@
 
   <!-- Add your site or application content here -->
   <header class="site-header">
-    <div class="hero">
-      <div class="header-container">
-        <div class="info-header">
-          <h1 class="nombre-sitio">Fisi<span>Bici</span></h1>
-          <span class="eslogan">
-            Una vida más saludable y ecológica te espera
-          </span>
-
-          <p class="texto-header">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum saepe expedita quisquam accusamus ipsum, fugiat laboriosam, deleniti cum veniam aperiam reprehenderit aliquam dolor, iste debitis eaque pariatur. Suscipit, voluptas recusandae?
-          </p>
-
-          <div class="inicio-sesion">
-            <a href="#" class="button">¡Únete ahora!</a>
-            <span>O inicia sesión</span>
-          </div>
-        </div>
-      </div>
+    <div>
+      <h1>Fisi<span>Bici</span></h1>
     </div>
+    <nav class="navegacion">
+      <input type="text" name="" id="buscar" placeholder="Buscar bici">
+      <input type="text" name="" id="categorias" placeholder="Categorías">
+    </nav>
   </header>
+
+  <main>
+    <div class="contenedor grid-bicis">
+      <div class="bici-item">
+        <div class="imagen-bici">
+          <!-- <img src="img/bici1.jpg" alt=""> -->
+        </div>
+        <p class="nombre-bici">
+          H. Davidson i8-3300
+        </p>
+        <span class="precio">S/ 00.00</span>
+      </div>
+
+      <div class="bici-item">
+        <div class="imagen-bici">
+          <!-- <img src="img/bici2.jpg" alt=""> -->
+        </div>
+        <p class="nombre-bici">
+          LaPierre RTX 2080
+        </p>
+        <span class="precio">S/ 00.00</span>
+      </div>
+
+      <div class="bici-item">
+        <div class="imagen-bici"></div>
+        <p class="nombre-bici">
+          H. Davidson i6-5200
+        </p>
+        <span class="precio">S/ 00.00</span>
+      </div>
+
+      <div class="bici-item">
+        <div class="imagen-bici"></div>
+        <p class="nombre-bici">
+          KTM Celeron 2.1
+        </p>
+        <span class="precio">S/ 00.00</span>
+      </div>
+
+      <div class="bici-item">
+        <div class="imagen-bici"></div>
+        <p class="nombre-bici">
+          Ariv Neon Genesis
+        </p>
+        <span class="precio">S/ 00.00</span>
+      </div>
+
+    </div>
+  </main>
+  <aside class="seccion-lateral">
+
+  </aside>
 
   <!-- Zona de scripts -->
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
