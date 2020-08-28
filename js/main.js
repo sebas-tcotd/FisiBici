@@ -16,3 +16,14 @@
 //     `;
 //     biciItem.style.backgroundImage = `url(../img/bici${1}.jpg)`;
 //   gridBicis.append(biciItem);
+
+fetch('../Backend/app.py')
+    .then(response => {
+        return response.text();
+    })
+    .then(data => {
+        console.log(`Datos: ${data}`);
+    })
+    .catch(err => {
+        console.log(err);
+    })
