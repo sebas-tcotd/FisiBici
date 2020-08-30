@@ -9,7 +9,6 @@ class Bicycle(Document):
     use = StringField(default="General")
     image = ImageField(thumbnail_size=(320, 240, False))
 
-
     def json(self):
         bicycle_dict = {
             'id': str(self.pk),
@@ -18,8 +17,8 @@ class Bicycle(Document):
             "stock": self.stock,
             "colors": self.colors,
             "use": self.use,
-            "img": str(base64.b64encode(self.image.read())),
-            "thumbnail": str(base64.b64encode(self.image.thumbnail.read()))
+            "img": str(base64.b64encode(self.image.read()), 'utf-8'),
+            "thumbnail": str(base64.b64encode(self.image.thumbnail.read()), 'utf-8')
         }
         return bicycle_dict
 
