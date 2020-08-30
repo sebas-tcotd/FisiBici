@@ -6,6 +6,7 @@ class Bicycle(Document):
     colors = ListField(StringField(), required=True)
     stock = IntField(default=1)
     use = StringField(default="General")
+    image = ImageField(thumbnail_size=(320, 240, False))
 
 
     def json(self):
@@ -15,7 +16,9 @@ class Bicycle(Document):
             "price": self.price,
             "stock": self.stock,
             "colors": self.colors,
-            "use": self.use
+            "use": self.use,
+            "img": str(self.image.read()),
+            "thumbnail": str(self.image.thumbnail.read())
         }
 
         return bicycle_dict
