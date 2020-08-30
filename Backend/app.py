@@ -30,18 +30,19 @@ def add_bicycle():
     store_bicycle = StoreBicycle()
     return store_bicycle(request)
 
-@app.route('/bicycles/<string:bicycle_name>', methods=['PUT'])
-def update_bicycle(bicycle_name):
+@app.route('/bicycles/<string:bicycle_id>', methods=['PUT'])
+def update_bicycle(bicycle_id):
     update_bicycle = UpdateBicycle()
-    return update_bicycle(request,bicycle_name)
+    return update_bicycle(request,bicycle_id)
 
-@app.route('/bicycles/<string:bicycle_name>', methods=['DELETE'])
-def delete_bicycle(bicycle_name):
+@app.route('/bicycles/<string:bicycle_id>', methods=['DELETE'])
+def delete_bicycle(bicycle_id):
     delete_bicycle = DeleteBicycle()
-    return delete_bicycle(bicycle_name)
+    return delete_bicycle(bicycle_id)
 
 #Registro
-'''@app.route('/register', methods=['POST'])
+'''
+@app.route('/register', methods=['POST'])
 def register():
     register = Register()
     return register(request)
