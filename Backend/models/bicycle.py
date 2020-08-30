@@ -2,11 +2,12 @@ from mongoengine import *
 
 class Bicycle(Document):
     name = StringField(unique=True, required=True)
-    price = FloatField(unique=True, required=True)
+    price = FloatField(required=True)
 
     def json(self):
         bicycle_dict = {
-            "name: ": self.name,
+            'id': str(self.pk),
+            "name": self.name,
             "price": self.price
         }
 
