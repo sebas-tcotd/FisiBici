@@ -6,7 +6,7 @@ class Bicycle(Document):
 
     def json(self):
         bicycle_dict = {
-            "name: ": self.name,
+            "name": self.name,
             "price": self.price
         }
 
