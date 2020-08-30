@@ -20,10 +20,10 @@ def get_bicycles():
     get_bicycles = GetBicycles()
     return get_bicycles()
 
-@app.route('/bicycles/<string:bicycle_name>')
-def get_bicycle(bicycle_name):
+@app.route('/bicycles/<string:bicycle_id>')
+def get_bicycle(bicycle_id):
     get_bicycle = GetBicycle()
-    return get_bicycle(bicycle_name)
+    return get_bicycle(bicycle_id)
 
 @app.route('/bicycles', methods=['POST'])
 def add_bicycle():
