@@ -3,10 +3,10 @@ from models.bicycle import Bicycle
 
 class GetBicycle:
 
-    def __call__(self,bicycle_name):
+    def __call__(self,bicycle_id):
 
         bicycle_obj = Bicycle.objects(
-            name=bicycle_name
+            id=bicycle_id
         ).first()
 
         if (bicycle_obj is not None):
