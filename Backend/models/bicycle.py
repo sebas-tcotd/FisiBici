@@ -1,4 +1,5 @@
 from mongoengine import *
+import base64
 
 class Bicycle(Document):
     name = StringField(required=True)
@@ -17,10 +18,9 @@ class Bicycle(Document):
             "stock": self.stock,
             "colors": self.colors,
             "use": self.use,
-            "img": str(self.image.read()),
-            "thumbnail": str(self.image.thumbnail.read())
+            "img": str(base64.b64encode(self.image.read())),
+            "thumbnail": str(base64.b64encode(self.image.thumbnail.read()))
         }
-
         return bicycle_dict
 
     meta = {
