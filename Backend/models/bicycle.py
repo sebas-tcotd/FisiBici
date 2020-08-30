@@ -6,10 +6,7 @@ class Bicycle(Document):
 
     def json(self):
         bicycle_dict = {
-<<<<<<< HEAD
-=======
             'id': str(self.pk),
->>>>>>> origin/backend
             "name": self.name,
             "price": self.price
         }
