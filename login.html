@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FisiBici | Sesión</title>
+  <meta property="og:title" content="FisiBici">
+  <meta property="og:type" content="service">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="author" href="humans.txt" />
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#E0D9CE">
+</head>
+
+<body>
+  <div class="barra clearfix">
+    <div class="contenedor content-barra">
+      <div class="logo">
+        <a href="/"><img src="img/FisiBiciLogo.svg" alt="Logo FisiBici"></a>
+      </div>
+
+      <i class="material-icons menu-movil">menu</i>
+
+      <nav class="navegacion-principal">
+        <a href="#">Bicicletas</a>
+        <a href="#">Contacto</a>
+        <a href="#">Acerca de </a>
+        <a href="#"><i class="material-icons">account_circle</i></a>
+      </nav>
+    </div>
+  </div> <!-- Barra -->
+
+  <main id="inicio-sesion">
+
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+
+          <legend class="texto-centrado">Regístrate</legend>
+
+          <div class="input-group mb-3 w-50 mx-auto input-group input-group-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+
+            <input type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username"
+              aria-describedby="basic-addon1">
+          </div>
+
+          <input type="submit" value="Regístrate" class="boton">
+        </div>
+
+        <div class="carousel-item">
+            <legend class="texto-centrado">Inicia Sesión</legend>
+
+            <div class="input-group mb-3 w-50 mx-auto input-group input-group-lg">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">@</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+
+              <input type="submit" value="Inicia sesión" class="boton">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+  </main>
+
+  <div class="site-footer">
+    <footer class="contenedor">
+      <div class="logo">
+        <a href="/"><img src="img/FisiBiciLogo.svg" alt="Logo FisiBici"></a>
+      </div>
+
+      <nav class="navegacion-principal">
+        <a href="#">Bicicletas</a>
+        <a href="#">Contacto</a>
+        <a href="#">Acerca de </a>
+      </nav>
+
+    </footer>
+    <div class="copyright">
+      <small>FisiBici. Todos los derechos reservados</small>
+      <small>SW2020504</small>
+    </div>
+  </div> <!-- Footer -->
+</body>
+
+<!-- Zona de scripts -->
+<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+  window.ga = function () {
+    ga.q.push(arguments)
+  };
+  ga.q = [];
+  ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('set', 'transport', 'beacon');
+  ga('send', 'pageview')
+
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+</script>
+
+</html>
