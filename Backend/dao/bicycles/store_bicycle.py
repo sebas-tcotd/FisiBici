@@ -10,6 +10,10 @@ class StoreBicycle:
             colors=request.json["colors"]
         )
 
+        if "img_path" in request.json:
+            image = open(request.json["img_path"], 'rb')
+            new_bicycle.image.replace(image, filename=new_bicycle.name + '.jpg')
+
         if "stock" in request.json:
             new_bicycle.stock = request.json["stock"]
         if "use" in request.json:
