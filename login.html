@@ -45,46 +45,74 @@
 
   <main id="inicio-sesion">
 
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="contenedor formulario-login w-50">
 
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-
-          <legend class="texto-centrado">Regístrate</legend>
-
-          <div class="input-group mb-3 w-50 mx-auto input-group input-group-lg">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">@</span>
-            </div>
-
-            <input type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username"
-              aria-describedby="basic-addon1">
-          </div>
-
-          <input type="submit" value="Regístrate" class="boton">
-        </div>
-
-        <div class="carousel-item">
-            <legend class="texto-centrado">Inicia Sesión</legend>
-
-            <div class="input-group mb-3 w-50 mx-auto input-group input-group-lg">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">@</span>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="registro-tab" data-toggle="tab" href="#registro" role="tab" aria-controls="registro"
+            aria-selected="true">Registrarse</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="inicioSesion-tab" data-toggle="tab" href="#inicioSesion" role="tab" aria-controls="inicioSesion"
+            aria-selected="false">Iniciar sesión</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="registro" role="tabpanel" aria-labelledby="registro-tab">
+            <form>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Correo electrónico</label>
+                    <input type="email" class="form-control form-control-lg" id="inputEmail4" placeholder="ejemplo@x-mail.com">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Contraseña</label>
+                    <input type="password" class="form-control form-control-lg" id="inputPassword4" placeholder="Contraseña ingeniosa :D">
+                  </div>
                 </div>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-
-              <input type="submit" value="Inicia sesión" class="boton">
+                <div class="form-group">
+                  <label for="inputAddress">Domicilio</label>
+                  <input type="text" class="form-control form-control-lg" id="inputAddress" placeholder="Av. Ejemplo 45">
+                </div>
+                <div class="form-row">
+                  
+                  <div class="form-group col-md-4">
+                    <label for="inputState">Distrito</label>
+                    <select id="inputState" class="form-control form-control-lg">
+                      <option selected disabled>Seleccione...</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="inputZip">Código Postal</label>
+                    <input type="text" class="form-control form-control-lg" id="inputZip" placeholder="×××××">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                  </div>
+                </div>
+                <button type="submit" class="boton">¡Unirse!</button>
+              </form>
+        </div>
+        <div class="tab-pane fade" id="inicioSesion" role="tabpanel" aria-labelledby="inicioSesion-tab">
+          <form id="cuerpo-inicioSesion">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Correo electrónico</label>
+              <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tu correo electrónico">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Tu contraseña">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Mantenme Conectado</label>
+            </div>
+            <button type="submit" class="boton">Iniciar sesión</button>
+          </form>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
 
   </main>
