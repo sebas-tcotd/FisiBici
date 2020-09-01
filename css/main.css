@@ -245,6 +245,13 @@ div.barra {
   background-color: #240E73;
   padding: 2rem 6rem;
 }
+@media (min-width: 768px){
+  div.barra {
+    box-shadow: 0 0 .3rem rgba(0, 0, 0, .87);
+    position: sticky;
+    top: 0;
+  }
+}
 
 div.barra .content-barra {
   display: flex;
@@ -288,6 +295,7 @@ div.logo img {
 }
 
 /*Navegación principal*/
+
 nav.navegacion-principal {
   display: none;
 }
@@ -340,6 +348,56 @@ nav.navegacion-principal a:last-child:hover {
   nav.navegacion-principal a:last-child {
     margin: 0;
   }
+}
+
+/* Menú móvil */
+.nav-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 5.5rem;
+  box-shadow: 0 0 .3rem rgba(0, 0, 0, .2);
+  background-color: #37247e;
+  display: flex;
+  overflow-x: auto;
+}
+
+@media (min-width: 922px){
+  .nav-bottom {
+    display: none;
+  }
+}
+
+.navBottom-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  text-align: center;
+  min-width: 5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: "PT Sans", sans-serif;
+  font-size: 1.3rem;
+  color: #D5D7F2;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color .3s ease-in-out;
+}
+
+.navBottom-link:hover {
+  background-color: #AAA7F2;
+  color: #37247e;
+  text-decoration: none;
+}
+
+.navBottom-link-active {
+  color: #FAB147;
+}
+
+.navBottom-icon {
+  font-size: 1.8rem;
 }
 
 .menu-movil {
@@ -475,6 +533,48 @@ div.tab-pane {
   height: 100%;
   background-color: rgba(170, 167, 242, 0.25);
   backdrop-filter: blur(5px);
+}
+
+
+/* SHOP */
+
+.tarjeta-bici {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px){
+  .grid-bicis {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.tarjeta-bici img {
+  max-width: 100%;
+}
+
+.tarjeta-bici p {
+  text-align: left;
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.tarjeta-bici-texto {
+  padding: 1rem 0;
+}
+
+.tarjeta-bici h3 {
+  font-size: 1.6rem;
+  text-align: left;
+  font-size: 2.4rem;
+  font-weight: 400;
+}
+
+.tarjeta-bici a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, .87)
 }
 
 /* ==========================================================================

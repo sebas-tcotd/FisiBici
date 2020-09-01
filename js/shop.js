@@ -6,7 +6,5 @@ peticion.getData("http://localhost:5000/bicycles")
   .then(data => {
     keys = Object.values(data.bicycles);
     console.log(keys);
-    //listadoBicis(data.bicycles);
+    bici.tarjetasBicis(data.bicycles);
   });
-
-
