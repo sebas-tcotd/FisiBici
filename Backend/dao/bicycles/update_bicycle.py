@@ -20,6 +20,10 @@ class UpdateBicycle:
                 bicycle_obj.colors = request.json["colors"]
             if "use" in request.json:
                 bicycle_obj.use = request.json["use"]
+            if "img_path" in request.json:
+                image = open(request.json["img_path"], 'rb')
+                bicycle_obj.image.replace(image, filename=bicycle_obj.name + '.jpg')
+
             bicycle_obj.save()
 
             return jsonify({
