@@ -144,7 +144,7 @@ p {
   font-size: 1.5rem;
 }
 
-/* Utilidades */
+/* UTILIDADES */
 
 .texto-centrado {
   text-align: center;
@@ -164,6 +164,92 @@ p {
   background-color: #37247e;
   text-decoration: none;
   color: white;
+}
+
+/* Pop-Up */
+.contenedor-popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 600ms ease;
+  /*Para que aparezca un fondo oscuro debajo del popup */
+}
+
+.contenedor-popup:target {
+  background: rgba(0, 0, 0, .6);
+  visibility: visible;
+  opacity: 1;
+  /* transform: translate(-50%, -50%); */
+}
+
+.contenedor-popup:target .popup {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+}
+
+.popup-img {
+  max-width: 100%;
+  height: 50%;
+  background-image: url(../img/biciLima.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 .3rem rgba(0, 0, 0, .5);
+}
+
+.popup-content {
+  height: 50%;
+  padding: 1rem !important;
+  overflow-y: auto;
+}
+
+.popup-content a {
+  padding: 1rem 3rem;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+@media (min-width: 480px) {
+  .popup-content a {
+    width: 50%;
+  }
+}
+
+.popup-title {
+  text-align: left;
+  font-size: 2.4rem;
+}
+
+.modal {
+  backdrop-filter: blur(5px);
+}
+
+div.modal-body {
+  padding: 0;
+}
+
+div.modal-content {
+  height: 70%;
+  border: none;
+  border-radius: 0px;
+}
+
+@media(min-width: 375px) {
+  div.modal-content {
+    height: 50rem;
+  }
+}
+
+.modal-header {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0;
 }
 
 /* HEADER */
@@ -245,7 +331,8 @@ div.barra {
   background-color: #240E73;
   padding: 2rem 6rem;
 }
-@media (min-width: 768px){
+
+@media (min-width: 768px) {
   div.barra {
     box-shadow: 0 0 .3rem rgba(0, 0, 0, .87);
     position: sticky;
@@ -362,7 +449,7 @@ nav.navegacion-principal a:last-child:hover {
   overflow-x: auto;
 }
 
-@media (min-width: 922px){
+@media (min-width: 922px) {
   .nav-bottom {
     display: none;
   }
@@ -450,9 +537,16 @@ nav.navegacion-principal a:last-child:hover {
 /*FOOTER*/
 
 .site-footer {
+  margin-bottom: 3.2rem;
   padding: 3rem;
   color: white;
   background-color: #240E73;
+}
+
+@media (min-width: 922px){
+  .site-footer {
+    margin: 0;
+  }
 }
 
 .site-footer footer .logo img {
@@ -489,11 +583,54 @@ nav.navegacion-principal a:last-child:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  /* height: auto; */
+  /* position: fixed; */
   background-image: url(../img/biciLima.jpg);
   background-position: center center;
   background-size: cover;
   position: relative;
+}
+
+.contenedor-formulario {
+  width: 58.6rem;
+  background: #fff;
+  margin: 5rem auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .contenedor-formulario {
+    margin: 0 auto;
+  }
+}
+
+.appointment-form {
+  padding: 3rem 4rem 5rem 4rem;
+}
+
+.appointment-form h2 {
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .contenedor-formulario {
+    width: calc(100% - 30px);
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .contenedor-formulario {
+    margin-left: 3rem;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .appointment-form {
+    padding: 5rem 3rem 7rem 3rem;
+    /* position: absolute; */
+    left: 25%;
+  }
 }
 
 div.formulario-login {
@@ -509,19 +646,65 @@ div.formulario-login {
   margin-left: 1rem;
 }
 
+.form-submit {
+  margin-top: 2rem;
+}
+
+.select-list {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.form-group-2,
+.form-group-1 {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.form-group-1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.form-group-1 input,
+.select-list select {
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.50);
+  font-size: small;
+  margin-bottom: 3rem;
+  padding: 1rem;
+}
+
+.form-group-1 label {
+  font-size: small;
+}
+
+.form-group-1 input#birthday {
+  width: 15rem;
+}
+
+.form-group-1 input:last-child {
+  margin-bottom: 0;
+}
+
+/* --------- */
+
 .nav-link {
   font-size: 1.8rem;
-  color: #D5D7F2;
-  border-radius: 0!important;
+  border-radius: 0 !important;
   border: none;
   transition: all .3s ease;
 }
+
 .nav-link.active {
-  color: white!important;
-  background-color: rgba(170, 167, 242, 0.25)!important;
-  backdrop-filter: blur(5px);
+  color: white !important;
+  background-color: rgba(170, 167, 242, 0.5) !important;
 }
-.nav-link:hover{
+
+.nav-link:hover {
   color: white;
   background-color: rgba(170, 167, 242, 0.25);
 }
@@ -531,7 +714,7 @@ div.tab-pane {
   font-size: 1.8rem;
   padding: 3rem 4rem;
   height: 100%;
-  background-color: rgba(170, 167, 242, 0.25);
+  /* background-color: rgba(170, 167, 242, 0.5); */
   backdrop-filter: blur(5px);
 }
 
@@ -542,7 +725,7 @@ div.tab-pane {
   margin-bottom: 2rem;
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .grid-bicis {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -554,11 +737,16 @@ div.tab-pane {
   max-width: 100%;
 }
 
-.tarjeta-bici p {
+.tarjeta-bici p,
+.popup-content p {
   text-align: left;
   font-weight: 700;
   font-size: 2rem;
   margin: 0;
+}
+
+.popup-content p {
+  margin-bottom: 1rem;
 }
 
 .tarjeta-bici-texto {
@@ -575,6 +763,18 @@ div.tab-pane {
 .tarjeta-bici a {
   text-decoration: none;
   color: rgba(0, 0, 0, .87)
+}
+
+
+/* Detalles bicicleta*/
+
+.table {
+  margin: 3rem auto 1rem;
+  width: 75%;
+}
+
+th.detalle-bici {
+  width: 25%;
 }
 
 /* ==========================================================================

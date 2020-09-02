@@ -32,10 +32,8 @@
         <a href="/"><img src="img/FisiBiciLogo.svg" alt="Logo FisiBici"></a>
       </div>
 
-      <i class="material-icons menu-movil">menu</i>
-
       <nav class="navegacion-principal">
-        <a href="#">Bicicletas</a>
+        <a href="./shop.html">Bicicletas</a>
         <a href="#">Contacto</a>
         <a href="#">Acerca de </a>
         <a href="#"><i class="material-icons">account_circle</i></a>
@@ -45,75 +43,38 @@
 
   <main id="inicio-sesion">
 
-    <div class="contenedor formulario-login w-50">
+    <div class="contenedor-formulario">
+      <form method="POST" class="appointment-form" id="appointment-form">
+          <h2>Regístrate</h2>
+          <div class="form-group-1">
+              <input type="text" name="first-name" id="first-name" placeholder="Nombres" autocomplete="name" required />
+              <input type="text" name="last-name" id="last-name" placeholder="Apellidos" required />
+              <input type="email" name="email" id="email" placeholder="Email" autocomplete="username" required />
+              <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="new-password" required />
+              <input type="tel" name="phone_number" id="phone_number" placeholder="Número de teléfono" required />
+              <label for="birthday">Cumpleaños</label>
+              <input type="date" name="birthday" id="birthday" min="1930-01-01" max="2020-12-31" required />
+              <input type="text" name="address" id="address" placeholder="Dirección" required />
+              
+              <div class="select-list">
+                  <select name="course_type" id="course_type" required>
+                      <option disabled selected value="">Distrito</option>
+                      <option value="society">Lima rural</option>
+                      <option value="language">Lima Metropolitana</option>
+                  </select>
+              </div>
 
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <a class="nav-link active" id="registro-tab" data-toggle="tab" href="#registro" role="tab" aria-controls="registro"
-            aria-selected="true">Registrarse</a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" id="inicioSesion-tab" data-toggle="tab" href="#inicioSesion" role="tab" aria-controls="inicioSesion"
-            aria-selected="false">Iniciar sesión</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="registro" role="tabpanel" aria-labelledby="registro-tab">
-            <form>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="inputEmail4">Correo electrónico</label>
-                    <input type="email" class="form-control form-control-lg" id="inputEmail4" placeholder="ejemplo@x-mail.com">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="inputPassword4">Contraseña</label>
-                    <input type="password" class="form-control form-control-lg" id="inputPassword4" placeholder="Contraseña ingeniosa :D">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputAddress">Domicilio</label>
-                  <input type="text" class="form-control form-control-lg" id="inputAddress" placeholder="Av. Ejemplo 45">
-                </div>
-                <div class="form-row">
-                  
-                  <div class="form-group col-md-4">
-                    <label for="inputState">Distrito</label>
-                    <select id="inputState" class="form-control form-control-lg">
-                      <option selected disabled>Seleccione...</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-md-3">
-                    <label for="inputZip">Código Postal</label>
-                    <input type="text" class="form-control form-control-lg" id="inputZip" placeholder="×××××">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="form-check">
-                  </div>
-                </div>
-                <button type="submit" class="boton">¡Unirse!</button>
-              </form>
-        </div>
-        <div class="tab-pane fade" id="inicioSesion" role="tabpanel" aria-labelledby="inicioSesion-tab">
-          <form id="cuerpo-inicioSesion">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Correo electrónico</label>
-              <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tu correo electrónico">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Contraseña</label>
-              <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Tu contraseña">
-            </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Mantenme Conectado</label>
-            </div>
-            <button type="submit" class="boton">Iniciar sesión</button>
-          </form>
-        </div>
-      </div>
-    </div>
+              <input type="tel" name="zip" id="zip" placeholder="Código postal" required/>
+          </div>
+          <div class="form-check">
+              <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required/>
+              <label for="agree-term" class="label-agree-term"><span><span></span></span>Estoy de acuerdo con los <a href="#" class="term-service">términos y condiciones</a></label>
+          </div>
+          <div class="form-submit">
+              <input type="submit" name="submit" id="submit" class="submit boton" value="Registrarse" />
+          </div>
+      </form>
+  </div>
 
   </main>
 
@@ -141,14 +102,8 @@
   </nav> <!-- Bottom Nav Bar-->
 
   <div class="site-footer">
-    <footer class="contenedor">
-      <div class="logo">
-        <a href="/"><img src="img/FisiBiciLogo.svg" alt="Logo FisiBici"></a>
-      </div>
-
-    </footer>
     <div class="copyright">
-      <small>FisiBici. Todos los derechos reservados</small>
+      <small>FisiBici&copy; 2020. Todos los derechos reservados</small> <br>
       <small>SW2020504</small>
     </div>
   </div> <!-- Footer -->

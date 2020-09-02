@@ -51,7 +51,9 @@
   <div class="contenedor">
     <section class="seccion">
       <h2>Tenemos la bicicleta adecuada para ti 😉</h2>
-      <p class="texto-centrado">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque maiores quod, quaerat fuga illo ab similique eum dolore cupiditate asperiores voluptatum unde. Eligendi minus sapiente, aut modi rem accusamus dolorum.</p>
+      <p class="texto-centrado">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque maiores quod, quaerat
+        fuga illo ab similique eum dolore cupiditate asperiores voluptatum unde. Eligendi minus sapiente, aut modi rem
+        accusamus dolorum.</p>
     </section>
     <section class="seccion">
       <h2>Bicicletas de uso general</h2>
@@ -71,13 +73,13 @@
     </section>
 
     <hr>
-    
+
     <section class="seccion">
       <h2>Bicicletas de uso deportivo</h2>
       <div class="grid-bicis">
 
         <div class="tarjeta-bici">
-          <a href="#">
+          <a href="#modal" data-toggle="modal" data-target="#modal">
             <img src="./img/bici1.jpg" alt="Bici1">
             <div class="tarjeta-bici-texto">
               <h3>Bici 1</h3>
@@ -112,6 +114,47 @@
       <span class="nav-text">Ajustes</span>
     </a>
   </nav> <!-- Bottom Nav Bar-->
+
+  <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+
+        <div class="modal-body">
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="material-icons">arrow_back</i></span>
+          </button>
+
+          <div class="popup-img"></div>
+
+          <div class="popup-content tarjeta-bici-texto">
+            <h2 class="popup-title">Lorem ipsum</h2>
+            <p>S/ <span class="precio">00.00</span></p>
+            <a href="#" class="boton">Agregar al carrito</a>
+
+            <table class="table table-bordered">
+              <caption>Detalles de la bicicleta</caption>
+              <tbody>
+                <tr>
+                  <th scope="row" class="detalle-bici">Stock</th>
+                  <td>Mark</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="detalle-bici">Color</th>
+                  <td>Jacob</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="detalle-bici">Mejor uso</th>
+                  <td>Larry the Bird</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- Popup modal -->
 
   <div class="site-footer">
     <footer class="contenedor">
