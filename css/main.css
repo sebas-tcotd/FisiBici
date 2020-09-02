@@ -578,8 +578,8 @@ nav.navegacion-principal a:last-child:hover {
 
 }
 
-/*INICIO DE SESIÓN*/
-#inicio-sesion {
+/* SING IN / SING UP */
+#crear-cuenta {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -591,9 +591,22 @@ nav.navegacion-principal a:last-child:hover {
   position: relative;
 }
 
+#inicio-sesion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh + 20rem);
+  /* position: fixed; */
+  background-image: url(../img/background1.png);
+  background-position: center 5%;
+  background-size: cover;
+  position: relative;
+}
+
 .contenedor-formulario {
   width: 58.6rem;
-  background: #fff;
+  background: rgba(255, 255, 255, .85);
+  backdrop-filter: blur(5px);
   margin: 5rem auto;
 }
 
@@ -607,11 +620,14 @@ nav.navegacion-principal a:last-child:hover {
   padding: 3rem 4rem 5rem 4rem;
 }
 
-.appointment-form h2 {
+.appointment-form small {
+  font-size: 1rem;
+  text-align: right;
+  display: block;
   margin-bottom: 3rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .contenedor-formulario {
     width: calc(100% - 30px);
     max-width: 100%;
@@ -627,6 +643,7 @@ nav.navegacion-principal a:last-child:hover {
 
 @media screen and (min-width: 768px) {
   .appointment-form {
+    width: calc(100% - 30px);
     padding: 5rem 3rem 7rem 3rem;
     /* position: absolute; */
     left: 25%;

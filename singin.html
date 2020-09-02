@@ -45,33 +45,15 @@
 
     <div class="contenedor-formulario">
       <form method="POST" class="appointment-form" id="appointment-form">
-          <h2>Regístrate</h2>
+          <h2>¡Qué alegría verte de nuevo!</h2>
+          <p>Ingresa tu correo y contraseña para que puedas acceder como usuario 😊</p>
+          <small>Si no tienes una cuenta, puedes <a href="./singup.html">crearte una</a>.</small>
           <div class="form-group-1">
-              <input type="text" name="first-name" id="first-name" placeholder="Nombres" autocomplete="name" required />
-              <input type="text" name="last-name" id="last-name" placeholder="Apellidos" required />
               <input type="email" name="email" id="email" placeholder="Email" autocomplete="username" required />
-              <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="new-password" required />
-              <input type="tel" name="phone_number" id="phone_number" placeholder="Número de teléfono" required />
-              <label for="birthday">Cumpleaños</label>
-              <input type="date" name="birthday" id="birthday" min="1930-01-01" max="2020-12-31" required />
-              <input type="text" name="address" id="address" placeholder="Dirección" required />
+              <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="current-password" required />
               
-              <div class="select-list">
-                  <select name="course_type" id="course_type" required>
-                      <option disabled selected value="">Distrito</option>
-                      <option value="society">Lima rural</option>
-                      <option value="language">Lima Metropolitana</option>
-                  </select>
-              </div>
-
-              <input type="tel" name="zip" id="zip" placeholder="Código postal" required/>
-          </div>
-          <div class="form-check">
-              <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required/>
-              <label for="agree-term" class="label-agree-term"><span><span></span></span>Estoy de acuerdo con los <a href="#" class="term-service">términos y condiciones</a></label>
-          </div>
           <div class="form-submit">
-              <input type="submit" name="submit" id="submit" class="submit boton" value="Registrarse" />
+              <input type="submit" name="submit" id="submit" class="submit boton" value="Iniciar sesión" />
           </div>
       </form>
   </div>
