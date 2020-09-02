@@ -1,3 +1,4 @@
+from datetime import datetime
 from utils.utils import json_message
 from models.user import User
 
@@ -12,8 +13,15 @@ class Register:
         ).first()
 
         if user_obj is None:
-
             new_user = User(
+                name=request.json['name'],
+                last_name=request.json['last_name'],
+                telephone=request.json['telephone'],
+                birthdate=datetime(
+                    request.json['birthdate']['year'],
+                    request.json['birthdate']['month'],
+                    request.json['birthdate']['day']
+                ),
                 password=request.json['password'],
                 email=email,
                 residence=request.json['residence'],
