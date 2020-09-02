@@ -1,8 +1,13 @@
+'''
+delete_bicycles.py: Modulo para borrar una bicicleta
+'''
 from flask import jsonify
 from models.bicycle import Bicycle
 
 class DeleteBicycle:
-
+    '''
+    Clase que borra una bicicleta
+    '''
     def __call__(self,bicycle_id):
 
         bicycle_obj = Bicycle.objects(

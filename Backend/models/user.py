@@ -1,6 +1,12 @@
-from mongoengine import *
+'''
+user.py: Modulo para definir el modelo Usuario
+'''
+from mongoengine import Document, StringField, DateTimeField
 
 class User(Document):
+    '''
+    Clase que define el modelo usuario
+    '''
     name = StringField(required=True)
     last_name = StringField(required=True)
     telephone = StringField(required=True)
@@ -12,6 +18,9 @@ class User(Document):
     postal_code = StringField(required=True)
 
     def json(self):
+        '''
+        Metodo que devuelve los atributos de la clase en formato json
+        '''
         user_dict = {
             'user_id': str(self.pk),
             "name": self.name,

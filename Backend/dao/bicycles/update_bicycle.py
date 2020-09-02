@@ -1,8 +1,13 @@
+'''
+store_bicycle.py: Modulo para actualizar una bicicleta en la base de datos
+'''
 from flask import jsonify
 from models.bicycle import Bicycle
 
 class UpdateBicycle:
-
+    '''
+    Clase que actualiza una bicicleta en la base de datos
+    '''
     def __call__(self,request,bicycle_id):
 
         bicycle_obj = Bicycle.objects(

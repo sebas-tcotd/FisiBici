@@ -1,7 +1,14 @@
-from mongoengine import *
+'''
+bicycle.py: Modulo para definir el modelo Bicicleta
+'''
 import base64
+from mongoengine import Document, StringField, ImageField
+from mongoengine import FloatField, ListField, IntField
 
 class Bicycle(Document):
+    '''
+    Clase que define el modelo bicicleta
+    '''
     name = StringField(required=True)
     price = FloatField(required=True)
     colors = ListField(StringField(), required=True)
@@ -10,6 +17,9 @@ class Bicycle(Document):
     image = ImageField(thumbnail_size=(320, 240, False))
 
     def json(self):
+        '''
+        Metodo que devuelve los atributos de la clase en formato json
+        '''
         bicycle_dict = {
             'id': str(self.pk),
             "name": self.name,

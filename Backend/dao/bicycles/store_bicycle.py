@@ -1,8 +1,13 @@
+'''
+store_bicycle.py: Modulo para almacenar una bicicleta en la base de datos
+'''
 from flask import jsonify
 from models.bicycle import Bicycle
 
 class StoreBicycle:
-
+    '''
+    Clase que almacena una bicicleta en la base de datos
+    '''
     def __call__(self,request):
         new_bicycle = Bicycle(
             name=request.json["name"],
