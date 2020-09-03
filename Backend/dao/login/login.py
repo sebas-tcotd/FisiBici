@@ -12,6 +12,7 @@ class Login:
     '''
     def __call__(self, request):
         session.pop('user_id', None)
+        request.headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:5500'
 
         user_email = request.json['email']
         password = request.json['password']
