@@ -4,6 +4,7 @@ sign_off.py: Modulo para cerrar sesion
 from flask import session
 from utils.utils import json_message
 
+
 class SignOff:
     '''
     Clase que cierra la sesion de un usuario

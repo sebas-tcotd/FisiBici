@@ -4,11 +4,12 @@ store_bicycle.py: Modulo para almacenar una bicicleta en la base de datos
 from flask import jsonify
 from models.bicycle import Bicycle
 
+
 class StoreBicycle:
     '''
     Clase que almacena una bicicleta en la base de datos
     '''
-    def __call__(self,request):
+    def __call__(self, request):
         new_bicycle = Bicycle(
             name=request.json["name"],
             price=request.json["price"],
@@ -17,7 +18,10 @@ class StoreBicycle:
 
         if "img_path" in request.json:
             image = open(request.json["img_path"], 'rb')
-            new_bicycle.image.replace(image, filename=new_bicycle.name + '.jpg')
+            new_bicycle.image.replace(
+                image,
+                filename=new_bicycle.name + '.jpg'
+            )
 
         if "stock" in request.json:
             new_bicycle.stock = request.json["stock"]

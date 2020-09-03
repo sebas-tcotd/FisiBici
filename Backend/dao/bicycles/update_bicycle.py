@@ -4,11 +4,12 @@ store_bicycle.py: Modulo para actualizar una bicicleta en la base de datos
 from flask import jsonify
 from models.bicycle import Bicycle
 
+
 class UpdateBicycle:
     '''
     Clase que actualiza una bicicleta en la base de datos
     '''
-    def __call__(self,request,bicycle_id):
+    def __call__(self, request, bicycle_id):
 
         bicycle_obj = Bicycle.objects(
             id=bicycle_id
@@ -27,7 +28,10 @@ class UpdateBicycle:
                 bicycle_obj.use = request.json["use"]
             if "img_path" in request.json:
                 image = open(request.json["img_path"], 'rb')
-                bicycle_obj.image.replace(image, filename=bicycle_obj.name + '.jpg')
+                bicycle_obj.image.replace(
+                    image,
+                    filename=bicycle_obj.name + '.jpg'
+                )
 
             bicycle_obj.save()
 

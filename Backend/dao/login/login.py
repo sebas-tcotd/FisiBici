@@ -5,11 +5,12 @@ from flask import session
 from utils.utils import json_message
 from models.user import User
 
+
 class Login:
     '''
     Clase que inicia sesion
     '''
-    def __call__(self,request):
+    def __call__(self, request):
         session.pop('user_id', None)
 
         user_email = request.json['email']

@@ -5,6 +5,7 @@ import base64
 from mongoengine import Document, StringField, ImageField
 from mongoengine import FloatField, ListField, IntField
 
+
 class Bicycle(Document):
     '''
     Clase que define el modelo bicicleta
@@ -27,8 +28,14 @@ class Bicycle(Document):
             "stock": self.stock,
             "colors": self.colors,
             "use": self.use,
-            "img": str(base64.b64encode(self.image.read()), 'utf-8'),
-            "thumbnail": str(base64.b64encode(self.image.thumbnail.read()), 'utf-8')
+            "img": str(base64.b64encode(
+                self.image.read()),
+                'utf-8'
+            ),
+            "thumbnail": str(base64.b64encode(
+                self.image.thumbnail.read()),
+                'utf-8'
+            )
         }
         return bicycle_dict
 
