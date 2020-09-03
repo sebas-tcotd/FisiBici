@@ -1,9 +1,14 @@
+'''
+get_current_user.py: Modulo para obtener al usuario que haya iniciado sesion
+'''
 from flask import jsonify, session
 from models.user import User
 from utils.utils import json_message
 
 class GetCurrentUser:
-
+    '''
+    Clase que obtiene al usuario que haya iniciado sesion
+    '''
     def __call__(self):
 
         if "user_id" in session:

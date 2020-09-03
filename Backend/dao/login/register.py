@@ -1,9 +1,14 @@
+'''
+login.py: Modulo para el registro
+'''
 from datetime import datetime
 from utils.utils import json_message
 from models.user import User
 
 class Register:
-
+    '''
+    Clase que registra a un usuario
+    '''
     def __call__(self,request):
 
         email = request.json['email']
