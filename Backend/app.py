@@ -11,11 +11,12 @@ app.secret_key = 'clavesecreta'
 create_routes_bicycles(app)
 create_routes_login(app)
 
-'''
+
 app.config.update(
-    SERVER_NAME = 'localhost:5000',
+    SERVER_NAME = '127.0.0.1:5000',
+    SESSION_COOKIE_NAME = '127.0.0.1:5000',
+    SESSION_COOKIE_DOMAIN = '127.0.0.1:5000'
 )
-'''
 
 if __name__ == '__main__':
-    app.run('localhost', debug=True, port=5000)
+    app.run(debug=True, port=5000)
