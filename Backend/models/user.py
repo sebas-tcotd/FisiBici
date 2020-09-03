@@ -3,6 +3,7 @@ user.py: Modulo para definir el modelo Usuario
 '''
 from mongoengine import Document, StringField, DateTimeField
 
+
 class User(Document):
     '''
     Clase que define el modelo usuario
