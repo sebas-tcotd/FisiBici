@@ -3,9 +3,12 @@ async function postData(url = '', data = {}) {
     method: 'POST',
     mode: 'cors',
     cache: 'no-cache',
-    credentials: 'same-origin',
+    credentials: 'include',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Headers': '*',
+      //'Access-Control-Allow-Credentials': 'true',
+      //'Access-Control-Allow-Origin': 'http://127.0.0.1:5500'
     },
     redirect: 'follow',
     referrerPolicy: 'no-referrer',
@@ -19,7 +22,7 @@ async function getData(url = '') {
     method: 'GET',
     mode: 'cors',
     cache: 'no-cache',
-    credentials: 'same-origin',
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json'
     },
@@ -34,7 +37,7 @@ async function putData(url = '', data = {}) {
     method: 'PUT',
     mode: 'cors',
     cache: 'no-cache',
-    credentials: 'same-origin',
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json; charset=UTF-8'
     },
@@ -49,7 +52,7 @@ async function deleteData(url = '') {
     method: 'DELETE',
     mode: 'cors',
     cache: 'no-cache',
-    credentials: 'same-origin',
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json'
     },

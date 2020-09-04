@@ -45,38 +45,49 @@
 
     <div class="contenedor-formulario">
       <form method="POST" class="appointment-form" id="appointment-form">
-          <h2>A un paso del cambio</h2>
-          <p>Estas solo a un paso de ser parte del cambio ecológico para nuestra ciudad. Solo tienes que rellenar los campos del formulario para que seas parte de nuestra comunidad.</p>
-          <small>¿Ya eres usuario? <a href="./singin.html">Inicia sesión</a></small>
-          <div class="form-group-1">
-              <input type="text" name="first-name" id="first-name" placeholder="Nombres" autocomplete="name" required />
-              <input type="text" name="last-name" id="last-name" placeholder="Apellidos" required />
-              <input type="email" name="email" id="email" placeholder="Email" autocomplete="username" required />
-              <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="new-password" required />
-              <input type="tel" name="phone_number" id="phone_number" placeholder="Número de teléfono" required />
-              <label for="birthday">Cumpleaños</label>
-              <input type="date" name="birthday" id="birthday" min="1930-01-01" max="2020-12-31" required />
-              <input type="text" name="address" id="address" placeholder="Dirección" required />
-              
-              <div class="select-list">
-                  <select name="course_type" id="course_type" required>
-                      <option disabled selected value="">Distrito</option>
-                      <option value="society">Lima rural</option>
-                      <option value="language">Lima Metropolitana</option>
-                  </select>
-              </div>
+        <h2>A un paso del cambio</h2>
+        <p>Estas solo a un paso de ser parte del cambio ecológico para nuestra ciudad. Solo tienes que rellenar los
+          campos del formulario para que seas parte de nuestra comunidad.</p>
+        <small>¿Ya eres usuario? <a href="./singin.html">Inicia sesión</a></small>
+        <div class="form-group-1">
 
-              <input type="tel" name="zip" id="zip" placeholder="Código postal" required/>
+          <input type="text" name="first-name" id="first-name" placeholder="Nombres" autocomplete="name" required />
+          <input type="text" name="last-name" id="last-name" placeholder="Apellidos" required />
+          <input type="email" name="email" id="email" placeholder="Email" autocomplete="username" required />
+          <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="new-password"
+            required />
+          <input type="tel" name="phone_number" id="phone_number" placeholder="Número de teléfono" required />
+          <label for="birthday">Cumpleaños</label>
+          <input type="date" name="birthday" id="birthday" min="1930-01-01" max="2020-12-31" required />
+          <input type="text" name="address" id="address" placeholder="Dirección" required />
+
+          <div class="select-list">
+            <select name="district" id="district" required>
+              <option disabled selected value="">Distrito</option>
+              <option value="Independencia">Independencia</option>
+              <option value="Callao">Callao</option>
+              <option value="San Martín de Porres">San Martín de Porres</option>
+              <option value="Lima Cercado">Lima Cercado</option>
+              <option value="Jesús María">Jesús María</option>
+              <option value="Pueblo Libre">Pueblo Libre</option>
+              <option value="Miraflores">Miraflores</option>
+              <option value="San Isidro">San Isidro</option>
+              <option value="Surquillo">Surquillo</option>
+            </select>
           </div>
-          <div class="form-check">
-              <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required/>
-              <label for="agree-term" class="label-agree-term"><span><span></span></span>Estoy de acuerdo con los <a href="#" class="term-service">términos y condiciones</a></label>
-          </div>
-          <div class="form-submit">
-              <input type="submit" name="submit" id="submit" class="submit boton" value="Unirme" />
-          </div>
+
+          <input type="tel" name="zip" id="zip" placeholder="Código postal" required />
+        </div>
+        <div class="form-check">
+          <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required />
+          <label for="agree-term" class="label-agree-term"><span><span></span></span>Estoy de acuerdo con los <a
+              href="#" class="term-service">términos y condiciones</a></label>
+        </div>
+        <div class="form-submit">
+          <input type="submit" name="submit" id="submit" class="submit boton" value="Unirme" />
+        </div>
       </form>
-  </div>
+    </div>
 
   </main>
 
