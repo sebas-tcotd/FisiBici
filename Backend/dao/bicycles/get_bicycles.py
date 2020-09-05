@@ -1,8 +1,14 @@
+'''
+get_bicycles.py: Modulo para obtener todas las bicicletas
+'''
 from flask import jsonify
 from models.bicycle import Bicycle
 
-class GetBicycles:
 
+class GetBicycles:
+    '''
+    Clase que obtiene todas las bicicletas
+    '''
     def __call__(self):
         bicycles_objs = Bicycle.objects()
         bicycles = []
