@@ -1,5 +1,6 @@
 import {
-  getData
+  getData,
+  deleteData
 } from './requests.js';
 
 /** Funciones de registro de usuario */
@@ -93,23 +94,39 @@ function letsGo() {
 
 /** Para cambiar el nombre de VISITANTE a ${NOMBRE-USUARIO} */
 export function deVisitanteToUser() {
+  //debugger;
   let nombreUser;
   getData('http://127.0.0.1:5000/user')
     .then(data => {
-      nombreUser = data.user.name;
 
-      /**Para el bottom bar */
-      let nombre = document.querySelector('#bottom-nombre-user'); //Selecciona el ID del bottom bar donde dice 'visitante'
-      nombre.textContent = nombreUser;
-
-      /** Para el top bar */
-      let topNombre = document.querySelector("#top-nombre-user");
-      let nombreSpan = document.createElement("span");
-      nombreSpan.setAttribute("class", "nombreSpan");
-      nombreSpan.innerHTML = nombreUser;
-      topNombre.append(nombreSpan);
+      if(data.message != "Ningun usuario ha iniciado sesion"){
+        nombreUser = data.user.name;
+  
+        /**Para el bottom bar */
+        let nombre = document.querySelector('#bottom-nombre-user'); //Selecciona el ID del bottom bar donde dice 'visitante'
+        nombre.textContent = nombreUser;
+  
+        /** Para el top bar */
+        let topNombre = document.querySelector("#top-nombre-user");
+        let nombreSpan = document.createElement("span");
+        nombreSpan.setAttribute("class", "nombreSpan");
+        nombreSpan.innerHTML = nombreUser;
+        topNombre.append(nombreSpan);
+        return true;
+      }else {
+        console.log(data.message);
+        return false;
+      }
     })
-    .catch(err => alert("Ups, algo ocurrió mal.\nRazón: " + err));
+    .catch(err => console.log("Ups, algo ocurrió mal.\nRazón: " + err));
+}
+
+export function cerrarSesion(){
+  deleteData('http://127.0.0.1:5000/user')
+  .then(() => {
+    window.location.reload();
+    window.location.pathname = './';
+  })
 }
 
 export {

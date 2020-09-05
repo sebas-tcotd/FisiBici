@@ -25,6 +25,8 @@ function setCors() {
 }
 
 setCors();
+user.deVisitanteToUser();
+let usuarioEsta;
 
 
 if (window.location.pathname == "/singup.html") {
@@ -32,94 +34,119 @@ if (window.location.pathname == "/singup.html") {
   let formulario = document.querySelector("#appointment-form");
   formulario.addEventListener("submit", event => {
 
-    event.preventDefault();
+      event.preventDefault();
 
-    let datos = new FormData(formulario);
+      let datos = new FormData(formulario);
 
-    user.renderFirstName(datos);
+      user.renderFirstName(datos);
 
-    let formJSON = {
-      "name": user.renderFirstName(datos),
-      "last_name": user.renderLastName(datos),
-      "telephone": user.renderTelephone(datos),
-      "email": user.renderEmail(datos),
-      "password": user.renderPassword(datos),
-      "birthdate": user.renderBirthday(datos),
-      "residence": user.renderResidence(datos),
-      "district": user.renderDistrict(datos),
-      "postal_code": user.renderPostalCode(datos)
-    }
+      let formJSON = {
+        "name": user.renderFirstName(datos),
+        "last_name": user.renderLastName(datos),
+        "telephone": user.renderTelephone(datos),
+        "email": user.renderEmail(datos),
+        "password": user.renderPassword(datos),
+        "birthdate": user.renderBirthday(datos),
+        "residence": user.renderResidence(datos),
+        "district": user.renderDistrict(datos),
+        "postal_code": user.renderPostalCode(datos)
+      }
 
-    console.log(formJSON);
+      console.log(formJSON);
 
-    peticion.postData('http://127.0.0.1:5000/register', formJSON)
-      .then(datos => {
-        //window.location.href = "./shop.html";
-        console.log(datos);
-      });
-  });
-} else if (window.location.pathname == "/singin.html") {
-  /** Si el usuario está en página de INICIO DE SESIÓN */
+      peticion.postData('http://127.0.0.1:5000/register', formJSON)
+        .then(datos => {
+            peticion.postData('http://127.0.0.1:5000/login', formJSON)
+              .then(() => {
+                  console.log('Datos enviados!');
+                });
 
-  console.log("Página de inicio de sesión");
+                alert('Bienvenido a FisiBici :D\nSe te redirigirá a la tienda.');
 
-  let formulario = document.querySelector("#appointment-form");
-  
-  /** Cuando el usuario haga click en el botón de iniciar sesión */
-  formulario.addEventListener("submit", event => {
-    event.preventDefault();
-    //debugger;
-    let datos = new FormData(formulario);
+                window.location.pathname = "./shop.html"; console.log(datos);
+              });
+        });
+  }
+  else if (window.location.pathname == "/singin.html") {
+    /** Si el usuario está en página de INICIO DE SESIÓN */
+    // debugger;
+    // if(usuarioEsta == true){
+    //   alert("Ya has iniciado sesión.\nSe te redirigirá a la tienda :)");
+    //   window.location.pathname = './shop.html';
+    // }
 
-    let formJSON = {
-      "email": user.renderEmail(datos),
-      "password": user.renderPassword(datos)
-    }
+    console.log("Página de inicio de sesión");
 
-    console.log(formJSON);
+    let formulario = document.querySelector("#appointment-form");
 
-    peticion.postData('http://127.0.0.1:5000/login', formJSON)
-      .then(datos => {
-        console.log('Datos enviados!');
+    /** Cuando el usuario haga click en el botón de iniciar sesión */
+    formulario.addEventListener("submit", (event) => {
+      //debugger;
+      event.preventDefault();
+      let datos = new FormData(formulario);
 
-        console.log(datos);
+      let formJSON = {
+        "email": user.renderEmail(datos),
+        "password": user.renderPassword(datos)
+      }
 
-        user.deVisitanteToUser();
-      })
-      .catch(err => {
-        console.log("Algo malo ocurrió:" + err);
-      })
-  });
+      console.log(formJSON);
 
-} else if (window.location.pathname == "/shop.html") {
-  /** Si el usuario está en la página de TIENDA */
-  let keys, tarjetaBici, biciCard;
-  peticion.getData("http://127.0.0.1:5000/bicycles")
-    .then(data => {
-      keys = Object.values(data.bicycles);
-      console.log(keys);
-      bici.tarjetasBicis(data.bicycles);
+      peticion.postData('http://127.0.0.1:5000/login', formJSON)
+        .then(datos => {
+          console.log('Datos enviados!');
 
-      tarjetaBici = document.querySelector("#modal");
-      console.log(tarjetaBici);
 
-      bici.popupBici(tarjetaBici);
+          if (datos.message != "Contraseña incorrecta") {
+            user.deVisitanteToUser();
+            //usuarioEsta = true;
+            window.location.pathname = "./shop.html";
+          } else {
+            alert(datos.message + "\nIntente nuevamente.");
+          }
+
+        })
+        .catch(err => {
+          console.log("Algo malo ocurrió:" + err);
+        })
     });
 
-  
+  } else if (window.location.pathname == "/shop.html") {
+    /** Si el usuario está en la página de TIENDA */
+    let keys, tarjetaBici, biciCard;
+    peticion.getData("http://127.0.0.1:5000/bicycles")
+      .then(data => {
+        keys = Object.values(data.bicycles);
+        console.log(keys);
+        bici.tarjetasBicis(data.bicycles);
 
-  let fondoModal = document.querySelector(".popup-img");
-  fondoModal.style.backgroundImage = "url(../img/bici4.jpg)";
-}
+        tarjetaBici = document.querySelector("#modal");
+        console.log(tarjetaBici);
+
+        bici.popupBici(tarjetaBici);
+      });
 
 
 
+    let fondoModal = document.querySelector(".popup-img");
+    fondoModal.style.backgroundImage = "url(../img/bici4.jpg)";
+  }
 
-// postData("http://localhost:5000/bicycles", {
-//     "name": "333",
-//     "price": 4000.0,
-//     "stock": 1,
-//     "colors": ["Amarillo"],
-//     "img_path": "../img/bici2.jpg"
-// })
-// .then(data => console.log(data))
+  document.querySelector('.cerrar-sesion').addEventListener("click", () => {
+    //debugger;
+    user.cerrarSesion()
+      .then(data => {
+        alert('Cerró sesión\n', data);
+      })
+  })
+
+
+
+  // postData("http://localhost:5000/bicycles", {
+  //     "name": "333",
+  //     "price": 4000.0,
+  //     "stock": 1,
+  //     "colors": ["Amarillo"],
+  //     "img_path": "../img/bici2.jpg"
+  // })
+  // .then(data => console.log(data))
