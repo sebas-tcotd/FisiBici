@@ -404,8 +404,19 @@ nav.navegacion-principal a {
   width: auto;
 }
 
+#top-nombre-user {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+
 nav.navegacion-principal a:last-child {
   margin-bottom: 0;
+}
+
+nav.navegacion-principal a:last-child span {
+  margin-left: .75rem;
 }
 
 nav.navegacion-principal a:hover {
@@ -438,6 +449,9 @@ nav.navegacion-principal a:last-child:hover {
 }
 
 /* Menú móvil */
+.dropdown {
+  padding: 0.92rem 1rem;
+}
 .nav-bottom {
   position: fixed;
   bottom: 0;
