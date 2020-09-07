@@ -1,0 +1,214 @@
+<!doctype html>
+<html class="no-js" lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>FisiBici 🚲</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="FisiBici">
+  <meta property="og:type" content="service">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="author" href="humans.txt" />
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#E0D9CE">
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <div class="barra clearfix">
+    <div class="contenedor content-barra">
+      <div class="logo">
+        <a href="/"><img src="img/FisiBiciLogo.svg" alt="Logo FisiBici"></a>
+      </div>
+
+      <nav class="navegacion-principal">
+        <a href="#">Bicicletas</a>
+        <a href="#">Contacto</a>
+        <a href="#">Acerca de </a>
+        <div class="dropdown">
+          <a href="#" id="top-nombre-user" data-toggle="dropdown"><i class="material-icons">account_circle</i></a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item cerrar-sesion" type="button">Cerrar Sesión</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div> <!-- Barra -->
+
+  <!-- Aquí comienza la parte principal -->
+  <div class="contenedor">
+    <section class="seccion">
+      <h2>Tenemos la bicicleta adecuada para ti 😉</h2>
+      <p class="texto-centrado">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque maiores quod, quaerat
+        fuga illo ab similique eum dolore cupiditate asperiores voluptatum unde. Eligendi minus sapiente, aut modi rem
+        accusamus dolorum.</p>
+    </section>
+    <section class="seccion">
+      <h2>Bicicletas de uso general</h2>
+      <div class="grid-bicis bicis-general">
+
+        <!-- <div class="tarjeta-bici">
+          <a href="#">
+            <img src="./img/bici1.jpg" alt="Bici1">
+            <div class="tarjeta-bici-texto">
+              <h3>Bici 1</h3>
+              <p>S/ <span class="precio">00.00</span></p>
+            </div>
+          </a>
+        </div> Tarjeta bici -->
+
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="seccion">
+      <h2>Bicicletas de uso deportivo</h2>
+      <div class="grid-bicis">
+
+        <!-- <div class="tarjeta-bici">
+          <a href="#modal" data-toggle="modal" data-target="#modal">
+            <img src="./img/bici1.jpg" alt="Bici1">
+            <div class="tarjeta-bici-texto">
+              <h3>Bici 1</h3>
+              <p>S/ <span class="precio">00.00</span></p>
+            </div>
+          </a>
+        </div>
+        -->
+
+      </div>
+    </section>
+  </div>
+
+  <nav class="nav-bottom">
+    <a href="./" class="navBottom-link">
+      <i class="material-icons navBottom-icon">home</i>
+      <span class="nav-text">Inicio</span>
+    </a>
+    <a href="./shop.html" class="navBottom-link navBottom-link-active">
+      <i class="material-icons navBottom-icon">pedal_bike</i>
+      <span class="nav-text">Bicicletas</span>
+    </a>
+    <a href="#" class="navBottom-link">
+      <i class="material-icons navBottom-icon">shopping_cart</i>
+      <span class="nav-text">Carrito</span>
+    </a>
+    <div class="dropdown">
+      <a href="#" class="navBottom-link" data-toggle="dropdown">
+        <i class="material-icons navBottom-icon">account_circle</i>
+        <span class="nav-text" id="bottom-nombre-user">Visitante</span>
+      </a>
+      <div class="dropdown-menu">
+        <a href="#" class="cerrar-sesion">Cerrar Sesión</a>
+      </div>
+    </div>
+    <a href="#" class="navBottom-link">
+      <i class="material-icons navBottom-icon">settings</i>
+      <span class="nav-text">Ajustes</span>
+    </a>
+  </nav> <!-- Bottom Nav Bar-->
+
+  <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+
+        <div class="modal-body">
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="material-icons">arrow_back</i></span>
+          </button>
+
+          <div class="popup-img"></div>
+
+          <div class="popup-content tarjeta-bici-texto">
+            <h2 class="popup-title">Lorem ipsum</h2>
+            <p>S/ <span class="precio">00.00</span></p>
+            <a href="#" class="boton">Agregar al carrito</a>
+
+            <table class="table table-bordered">
+              <caption>Detalles de la bicicleta</caption>
+              <tbody>
+                <tr>
+                  <th scope="row" class="detalle-bici">Stock</th>
+                  <td>Mark</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="detalle-bici">Color</th>
+                  <td>Jacob</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="detalle-bici">Mejor uso</th>
+                  <td>Larry the Bird</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- Popup modal -->
+
+  <div class="site-footer">
+    <footer class="contenedor">
+      <div class="logo">
+        <a href="/"><img src="img/FisiBiciLogo.svg" alt="Logo FisiBici"></a>
+      </div>
+
+    </footer>
+    <div class="copyright">
+      <small>FisiBici. Todos los derechos reservados</small>
+      <small>SW2020504</small>
+    </div>
+  </div>
+
+
+  <!-- Zona de scripts -->
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script type="module" src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('set', 'transport', 'beacon');
+    ga('send', 'pageview')
+
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FisiBici | Sesión</title>
+  <meta property="og:title" content="FisiBici">
+  <meta property="og:type" content="service">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="author" href="humans.txt" />
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#E0D9CE">
+</head>
+
+<body>
+  <div class="barra clearfix">
+    <div class="contenedor content-barra">
+      <div class="logo">
+        <a href="/"><img src="img/FisiBiciLogo.svg" alt="Logo FisiBici"></a>
+      </div>
+
+      <nav class="navegacion-principal">
+        <a href="./shop.html">Bicicletas</a>
+        <a href="#">Contacto</a>
+        <a href="#">Acerca de </a>
+        <a href="#"><i class="material-icons">account_circle</i></a>
+      </nav>
+    </div>
+  </div> <!-- Barra -->
+
+  <main id="crear-cuenta">
+
+    <div class="contenedor-formulario">
+      <form method="POST" class="appointment-form" id="appointment-form">
+        <h2>A un paso del cambio</h2>
+        <p>Estas solo a un paso de ser parte del cambio ecológico para nuestra ciudad. Solo tienes que rellenar los
+          campos del formulario para que seas parte de nuestra comunidad.</p>
+        <small>¿Ya eres usuario? <a href="./singin.html">Inicia sesión</a></small>
+        <div class="form-group-1">
+
+          <input type="text" name="first-name" id="first-name" placeholder="Nombres" autocomplete="name" required />
+          <input type="text" name="last-name" id="last-name" placeholder="Apellidos" required />
+          <input type="email" name="email" id="email" placeholder="Email" autocomplete="username" required />
+          <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="new-password"
+            required />
+          <input type="tel" name="phone_number" id="phone_number" placeholder="Número de teléfono" required />
+          <label for="birthday">Cumpleaños</label>
+          <input type="date" name="birthday" id="birthday" min="1930-01-01" max="2020-12-31" required />
+          <input type="text" name="address" id="address" placeholder="Dirección" required />
+
+          <div class="select-list">
+            <select name="district" id="district" required>
+              <option disabled selected value="">Distrito</option>
+              <option value="Independencia">Independencia</option>
+              <option value="Callao">Callao</option>
+              <option value="San Martín de Porres">San Martín de Porres</option>
+              <option value="Lima Cercado">Lima Cercado</option>
+              <option value="Jesús María">Jesús María</option>
+              <option value="Pueblo Libre">Pueblo Libre</option>
+              <option value="Miraflores">Miraflores</option>
+              <option value="San Isidro">San Isidro</option>
+              <option value="Surquillo">Surquillo</option>
+            </select>
+          </div>
+
+          <input type="tel" name="zip" id="zip" placeholder="Código postal" required />
+        </div>
+        <div class="form-check">
+          <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required />
+          <label for="agree-term" class="label-agree-term"><span><span></span></span>Estoy de acuerdo con los <a
+              href="#" class="term-service">términos y condiciones</a></label>
+        </div>
+        <div class="form-submit">
+          <input type="submit" name="submit" id="submit" class="submit boton" value="Unirme" />
+        </div>
+      </form>
+    </div>
+
+  </main>
+
+  <nav class="nav-bottom">
+    <a href="./" class="navBottom-link">
+      <i class="material-icons navBottom-icon">home</i>
+      <span class="nav-text">Inicio</span>
+    </a>
+    <a href="./shop.html" class="navBottom-link">
+      <i class="material-icons navBottom-icon">pedal_bike</i>
+      <span class="nav-text">Bicicletas</span>
+    </a>
+    <a href="#" class="navBottom-link">
+      <i class="material-icons navBottom-icon">shopping_cart</i>
+      <span class="nav-text">Carrito</span>
+    </a>
+    <a href="#" class="navBottom-link navBottom-link-active">
+      <i class="material-icons navBottom-icon">account_circle</i>
+      <span class="nav-text">Visitante</span>
+    </a>
+    <a href="#" class="navBottom-link">
+      <i class="material-icons navBottom-icon">settings</i>
+      <span class="nav-text">Ajustes</span>
+    </a>
+  </nav> <!-- Bottom Nav Bar-->
+
+  <div class="site-footer">
+    <div class="copyright">
+      <small>FisiBici&copy; 2020. Todos los derechos reservados</small> <br>
+      <small>SW2020504</small>
+    </div>
+  </div> <!-- Footer -->
+</body>
+
+<!-- Zona de scripts -->
+<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<script type="module" src="js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+  window.ga = function () {
+    ga.q.push(arguments)
+  };
+  ga.q = [];
+  ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('set', 'transport', 'beacon');
+  ga('send', 'pageview')
+
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+</script>
+
+</html>
