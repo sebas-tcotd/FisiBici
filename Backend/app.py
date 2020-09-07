@@ -7,7 +7,8 @@ from routes.bicycles import create_routes_bicycles
 from routes.login import create_routes_login
 
 app = Flask(__name__)
-DB_URI = "mongodb+srv://Mauricio:1234@fisibici.cpmx7.mongodb.net/SistemaBicicletas?retryWrites=true&w=majority"
+DB_URI = "mongodb+srv://Mauricio:1234@fisibici"
+DB_URI += ".cpmx7.mongodb.net/SistemaBicicletas?retryWrites=true&w=majority"
 connect(host=DB_URI)
 
 CORS(app=app, supports_credentials=True)
