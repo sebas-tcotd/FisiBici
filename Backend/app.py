@@ -8,7 +8,7 @@ from Backend.config.config import config_app
 from Backend.routes.bicycles import create_routes_bicycles
 from Backend.routes.login import create_routes_login
 
-template_dir = os.path.abspath('../')
+template_dir = os.path.abspath('../Frontend')
 app = Flask(__name__, template_folder=template_dir)
 DB_URI = "mongodb+srv://Mauricio:1234@fisibici"
 DB_URI += ".cpmx7.mongodb.net/SistemaBicicletas?retryWrites=true&w=majority"
