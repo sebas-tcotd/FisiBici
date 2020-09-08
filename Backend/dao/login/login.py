@@ -2,8 +2,8 @@
 login.py: Modulo para iniciar sesion
 '''
 from flask import session
-from Backend.utils.utils import json_message
-from Backend.models.user import User
+from utils.utils import json_message
+from models.user import User
 
 
 class Login:

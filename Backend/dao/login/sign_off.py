@@ -2,7 +2,7 @@
 sign_off.py: Modulo para cerrar sesion
 '''
 from flask import session
-from Backend.utils.utils import json_message
+from utils.utils import json_message
 
 
 class SignOff:

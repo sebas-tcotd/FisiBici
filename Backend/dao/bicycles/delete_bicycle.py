@@ -2,7 +2,7 @@
 delete_bicycles.py: Modulo para borrar una bicicleta
 '''
 from flask import jsonify
-from Backend.models.bicycle import Bicycle
+from models.bicycle import Bicycle
 
 
 class DeleteBicycle:

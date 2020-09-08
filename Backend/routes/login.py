@@ -2,10 +2,10 @@
 login.py: Modulo para definir las rutas relacionadas con la API login
 '''
 from flask import request
-from Backend.dao.login.login import Login
-from Backend.dao.login.register import Register
-from Backend.dao.login.get_current_user import GetCurrentUser
-from Backend.dao.login.sign_off import SignOff
+from dao.login.login import Login
+from dao.login.register import Register
+from dao.login.get_current_user import GetCurrentUser
+from dao.login.sign_off import SignOff
 
 
 def create_routes_login(app):

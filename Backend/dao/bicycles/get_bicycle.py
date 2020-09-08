@@ -2,7 +2,7 @@
 get_bicycle.py: Modulo para obtener una bicicleta en especifico
 '''
 from flask import jsonify
-from Backend.models.bicycle import Bicycle
+from models.bicycle import Bicycle
 
 
 class GetBicycle:

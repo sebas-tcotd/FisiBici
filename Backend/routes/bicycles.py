@@ -3,11 +3,11 @@ bicycles.py: Modulo para definir las rutas relacionadas con la API bicicletas
 '''
 from flask import request
 
-from Backend.dao.bicycles.store_bicycle import StoreBicycle
-from Backend.dao.bicycles.get_bicycles import GetBicycles
-from Backend.dao.bicycles.get_bicycle import GetBicycle
-from Backend.dao.bicycles.update_bicycle import UpdateBicycle
-from Backend.dao.bicycles.delete_bicycle import DeleteBicycle
+from dao.bicycles.store_bicycle import StoreBicycle
+from dao.bicycles.get_bicycles import GetBicycles
+from dao.bicycles.get_bicycle import GetBicycle
+from dao.bicycles.update_bicycle import UpdateBicycle
+from dao.bicycles.delete_bicycle import DeleteBicycle
 
 
 def create_routes_bicycles(app):
