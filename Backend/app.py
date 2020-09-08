@@ -14,7 +14,7 @@ connect(host=DB_URI)
 
 @app.route('/')
 def index():
-    return "Almenos se desplegó :v"
+    return render_template('../index.html')
 
 CORS(app=app, supports_credentials=True)
 
