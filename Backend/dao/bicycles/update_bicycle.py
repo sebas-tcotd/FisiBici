@@ -2,7 +2,7 @@
 store_bicycle.py: Modulo para actualizar una bicicleta en la base de datos
 '''
 from flask import jsonify
-from models.bicycle import Bicycle
+from Backend.models.bicycle import Bicycle
 
 
 class UpdateBicycle:
