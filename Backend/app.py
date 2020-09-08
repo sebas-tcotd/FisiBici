@@ -3,9 +3,9 @@ from flask import Flask, render_template
 from flask_cors import CORS
 from mongoengine import connect
 
-from config.config import config_app
-from routes.bicycles import create_routes_bicycles
-from routes.login import create_routes_login
+from Backend.config.config import config_app
+from Backend.routes.bicycles import create_routes_bicycles
+from Backend.routes.login import create_routes_login
 
 app = Flask(__name__)
 DB_URI = "mongodb+srv://Mauricio:1234@fisibici"
