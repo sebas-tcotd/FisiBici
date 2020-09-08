@@ -11,7 +11,7 @@ DB_URI = "mongodb+srv://Mauricio:1234@fisibici"
 DB_URI += ".cpmx7.mongodb.net/SistemaBicicletas?retryWrites=true&w=majority"
 connect(host=DB_URI)
 
-@app.route('/', methods=['POST'])
+@app.route('/')
 def index():
     return "Almenos se desplegó :v"
 
