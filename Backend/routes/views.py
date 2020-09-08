@@ -11,8 +11,7 @@ def create_routes_views(app):
     def index():
         return render_template('index.html')
 
-    '''
-    @app.route('/register')
+
+    @app.route('/auth/register')
     def register():
         return render_template('singup.html')
-    '''
