@@ -1,25 +1,15 @@
 '''Archivo que ejecuta la aplicacion'''
 from flask import Flask, render_template
-from flask_cors import CORS
-from mongoengine import connect
 
-from config.config import config_app
+from config.config import config_app_production
+from routes.views import create_routes_views
 from routes.bicycles import create_routes_bicycles
 from routes.login import create_routes_login
 
 app = Flask(__name__, template_folder='../Frontend/templates', static_folder='../Frontend/static')
 
-DB_URI = "mongodb+srv://Mauricio:1234@fisibici"
-DB_URI += ".cpmx7.mongodb.net/SistemaBicicletas?retryWrites=true&w=majority"
-connect(host=DB_URI)
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-CORS(app=app, supports_credentials=True)
-
-config_app(app)
+config_app_production(app)
+create_routes_views(app)
 create_routes_bicycles(app)
 create_routes_login(app)
 
