@@ -53,7 +53,7 @@
           </div>
           <div class="inicio-sesion">
             <a href="{{ url_for('singup') }}" class="boton">¡Únete ahora!</a>
-            <span>O <a href="https://fisi-bici.herokuapp.com/Frontend/templates/singin.html">inicia sesión</a></span>
+            <span>O <a href="{{ url_for('singin') }}">inicia sesión</a></span>
           </div>
         </div>
       </div>
@@ -64,12 +64,12 @@
   <div class="barra clearfix">
     <div class="contenedor content-barra">
       <div class="logo">
-        <a href="https://fisi-bici.herokuapp.com"><img
+        <a href="{{ url_for('index') }}"><img
             src="{{ url_for('static', filename='img/FisiBiciLogo.svg') }}" alt="Logo FisiBici"></a>
       </div>
 
       <nav class="navegacion-principal">
-        <a href="https://fisi-bici.herokuapp.com/Frontend/templates/shop.html">Bicicletas</a>
+        <a href="{{ url_for('shop') }}">Bicicletas</a>
         <a href="#">Contacto</a>
         <a href="#">Acerca de </a>
         <div class="dropdown">
@@ -134,11 +134,11 @@
   </section>
 
   <nav class="nav-bottom">
-    <a href="https://fisi-bici.herokuapp.com" class="navBottom-link navBottom-link-active">
+    <a href="{{ url_for('index') }}" class="navBottom-link navBottom-link-active">
       <i class="material-icons navBottom-icon">home</i>
       <span class="nav-text">Inicio</span>
     </a>
-    <a href="https://fisi-bici.herokuapp.com/Frontend/templates/shop.html" class="navBottom-link">
+    <a href="{{ url_for('shop') }}" class="navBottom-link">
       <i class="material-icons navBottom-icon">pedal_bike</i>
       <span class="nav-text">Bicicletas</span>
     </a>
@@ -162,18 +162,11 @@
   </nav> <!-- Bottom Nav Bar-->
 
   <div class="site-footer">
-    <footer class="contenedor">
-      <div class="logo">
-        <a href="https://fisi-bici.herokuapp.com"><img src="{{ url_for('static', filename='img/FisiBiciLogo.svg') }}"
-            alt="Logo FisiBici"></a>
-      </div>
-
-    </footer>
     <div class="copyright">
-      <small>FisiBici. Todos los derechos reservados</small>
+      <small>FisiBici&copy; 2020. Todos los derechos reservados</small> <br>
       <small>SW2020504</small>
     </div>
-  </div>
+  </div> <!-- Footer -->
 
   <!-- Zona de scripts -->
   <script src="{{ url_for('static', filename='js/vendor/modernizr-3.11.2.min.js') }}"></script>

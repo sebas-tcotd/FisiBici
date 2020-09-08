@@ -12,17 +12,17 @@
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
-  <link rel="manifest" href="/Frontend/site.webmanifest">
-  <link rel="apple-touch-icon" href="/Frontend/icon.png">
+  <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/icon.png') }}">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="author" href="/Frontend/humans.txt" />
+  <link rel="author" href="{{ url_for('static', filename='humans.txt') }}" />
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/Frontend/css/normalize.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="/Frontend/css/main.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
   <meta name="theme-color" content="#E0D9CE">
 </head>
@@ -31,12 +31,12 @@
   <div class="barra clearfix">
     <div class="contenedor content-barra">
       <div class="logo">
-        <a href="https://fisi-bici.herokuapp.com"><img
-            src="/Frontend/img/FisiBiciLogo.svg" alt="Logo FisiBici"></a>
+        <a href="{{ url_for('index') }}"><img
+            src="{{ url_for('static', filename='img/FisiBiciLogo.svg') }}" alt="Logo FisiBici"></a>
       </div>
 
       <nav class="navegacion-principal">
-        <a href="/Frontend/templates/shop.html">Bicicletas</a>
+        <a href="{{ url_for('shop') }}">Bicicletas</a>
         <a href="#">Contacto</a>
         <a href="#">Acerca de </a>
         <div class="dropdown">
@@ -71,11 +71,11 @@
   </main>
 
   <nav class="nav-bottom">
-    <a href="https://fisi-bici.herokuapp.com" class="navBottom-link navBottom-link-active">
+    <a href="{{ url_for('index') }}" class="navBottom-link navBottom-link-active">
       <i class="material-icons navBottom-icon">home</i>
       <span class="nav-text">Inicio</span>
     </a>
-    <a href="/Frontend/templates/shop.html" class="navBottom-link">
+    <a href="{{ url_for('shop') }}" class="navBottom-link">
       <i class="material-icons navBottom-icon">pedal_bike</i>
       <span class="nav-text">Bicicletas</span>
     </a>
@@ -107,9 +107,9 @@
 </body>
 
 <!-- Zona de scripts -->
-<script src="/Frontend/js/vendor/modernizr-3.11.2.min.js"></script>
-<script src="/Frontend/js/plugins.js"></script>
-<script type="module" src="/Frontend/js/main.js" defer></script>
+<script src="{{ url_for('static', filename='js/vendor/modernizr-3.11.2.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='js/main.js') }}" defer></script>
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
 <!-- 
