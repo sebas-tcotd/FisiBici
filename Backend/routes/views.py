@@ -11,7 +11,14 @@ def create_routes_views(app):
     def index():
         return render_template('index.html')
 
-
     @app.route('/auth/singup')
     def singup():
         return render_template('singup.html')
+
+    @app.route('/auth/singin')
+    def singin():
+        return render_template('singin.html')
+
+    @app.route('/shop')
+    def shop():
+        return render_template('shop.html')
