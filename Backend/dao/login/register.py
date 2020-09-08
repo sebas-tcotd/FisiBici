@@ -2,8 +2,8 @@
 login.py: Modulo para el registro
 '''
 from datetime import datetime
-from utils.utils import json_message
-from models.user import User
+from Backend.utils.utils import json_message
+from Backend.models.user import User
 
 
 class Register:
