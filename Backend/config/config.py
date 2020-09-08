@@ -7,7 +7,7 @@ def config_app(app):
     app.secret_key = 'clavesecreta'
 
     app.config.update(
-        SERVER_NAME='127.0.0.1:5000',
-        SESSION_COOKIE_NAME='127.0.0.1:5000',
-        SESSION_COOKIE_DOMAIN='127.0.0.1:5000',
+        SERVER_NAME='fisi-bici.herokuapp.com',
+        SESSION_COOKIE_NAME='fisi-bici.herokuapp.com',
+        SESSION_COOKIE_DOMAIN='fisi-bici.herokuapp.com',
     )
