@@ -96,7 +96,7 @@ function letsGo() {
 export function deVisitanteToUser() {
   //debugger;
   let nombreUser;
-  getData('http://127.0.0.1:5000/user')
+  getData('http://fisi-bici.herokuapp.com/user')
     .then(data => {
 
       if(data.message != "Ningun usuario ha iniciado sesion"){
@@ -122,7 +122,7 @@ export function deVisitanteToUser() {
 }
 
 export function cerrarSesion(){
-  deleteData('http://127.0.0.1:5000/user')
+  deleteData('http://fisi-bici.herokuapp.com/user')
   .then(() => {
     window.location.reload();
     window.location.pathname = './';

@@ -54,9 +54,9 @@ if (window.location.pathname == "/singup.html") {
 
       console.log(formJSON);
 
-      peticion.postData('http://127.0.0.1:5000/register', formJSON)
+      peticion.postData('http://fisi-bici.herokuapp.com/register', formJSON)
         .then(datos => {
-            peticion.postData('http://127.0.0.1:5000/login', formJSON)
+            peticion.postData('http://fisi-bici.herokuapp.com/login', formJSON)
               .then(() => {
                   console.log('Datos enviados!');
                 });
@@ -92,7 +92,7 @@ if (window.location.pathname == "/singup.html") {
 
       console.log(formJSON);
 
-      peticion.postData('http://127.0.0.1:5000/login', formJSON)
+      peticion.postData('http://fisi-bici.herokuapp.com/login', formJSON)
         .then(datos => {
           console.log('Datos enviados!');
 
@@ -114,7 +114,7 @@ if (window.location.pathname == "/singup.html") {
   } else if (window.location.pathname == "/shop.html") {
     /** Si el usuario está en la página de TIENDA */
     let keys, tarjetaBici, biciCard;
-    peticion.getData("http://127.0.0.1:5000/bicycles")
+    peticion.getData("http://fisi-bici.herokuapp.com/bicycles")
       .then(data => {
         keys = Object.values(data.bicycles);
         console.log(keys);
