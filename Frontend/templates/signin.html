@@ -56,7 +56,7 @@
         <h2>¡Qué alegría verte de nuevo!</h2>
         <p>Ingresa tu correo y contraseña para que puedas acceder como usuario 😊</p>
         <small>Si no tienes una cuenta, puedes <a
-            href="/Frontend/templates/singup.html">crearte una</a>.</small>
+            href="{{ url_for('sign_up') }}">crearte una</a>.</small>
         <div class="form-group-1">
           <input type="email" name="email" id="email" placeholder="Email" autocomplete="username" required />
           <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="current-password"
