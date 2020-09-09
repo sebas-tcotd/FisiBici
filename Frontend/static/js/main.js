@@ -29,7 +29,7 @@ user.deVisitanteToUser();
 let usuarioEsta;
 
 
-if (window.location.href == "http://fisi-bici.herokuapp.com/signup") {
+if (window.location.href == "http://fisi-bici.herokuapp.com/auth/signup") {
   /** Si el usuario está en la página de REGISTRO */
   let formulario = document.querySelector("#appointment-form");
   formulario.addEventListener("submit", event => {
@@ -67,7 +67,7 @@ if (window.location.href == "http://fisi-bici.herokuapp.com/signup") {
               });
         });
   }
-  else if (window.location.href == "http://fisi-bici.herokuapp.com/singin") {
+  else if (window.location.href == "http://fisi-bici.herokuapp.com/auth/singin") {
     /** Si el usuario está en página de INICIO DE SESIÓN */
     // debugger;
     // if(usuarioEsta == true){
