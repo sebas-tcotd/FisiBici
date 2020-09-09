@@ -29,7 +29,7 @@ user.deVisitanteToUser();
 let usuarioEsta;
 
 
-if (window.location.href == "{{ url_for('singup') }}") {
+if (window.location.href == "http://fisi-bici.herokuapp.com/signup") {
   /** Si el usuario está en la página de REGISTRO */
   let formulario = document.querySelector("#appointment-form");
   formulario.addEventListener("submit", event => {
@@ -67,7 +67,7 @@ if (window.location.href == "{{ url_for('singup') }}") {
               });
         });
   }
-  else if (window.location.href == "{{ url_for('singin') }}") {
+  else if (window.location.href == "http://fisi-bici.herokuapp.com/singin") {
     /** Si el usuario está en página de INICIO DE SESIÓN */
     // debugger;
     // if(usuarioEsta == true){
@@ -100,7 +100,7 @@ if (window.location.href == "{{ url_for('singup') }}") {
           if (datos.message != "Contraseña incorrecta") {
             user.deVisitanteToUser();
             //usuarioEsta = true;
-            window.location.href = "{{ url_for('shop') }}";
+            window.location.href = "http://fisi-bici.herokuapp.com/shop";
           } else {
             alert(datos.message + "\nIntente nuevamente.");
           }
