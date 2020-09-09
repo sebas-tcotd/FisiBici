@@ -10,21 +10,20 @@ import * as user from './user.js';
 //     //listadoBicis(data.bicycles);
 //   });
 
-// function setCors() {
-//   let whitelist = ['http://127.0.0.1:5500', 'http://127.0.0.1:5000'];
-//   let corsOptions = {
-//     origin: (origin, callback) => {
-//       if (whitelist.indexOf(origin) !== -1) {
-//         callback(null, true)
-//       } else {
-//         callback(new Error('Not allowed by CORS'))
-//       }
-//     },
-//     credentials: true
-//   }
-// }
-
-// setCors();
+function setCors() {
+   let whitelist = ['http://fisi-bici.herokuapp.com/'];
+   let corsOptions = {
+     origin: (origin, callback) => {
+       if (whitelist.indexOf(origin) !== -1) {
+         callback(null, true)
+       } else {
+         callback(new Error('Not allowed by CORS'))
+       }
+     },
+     credentials: true
+   }
+ }
+ setCors();
 user.deVisitanteToUser();
 let usuarioEsta;
 
