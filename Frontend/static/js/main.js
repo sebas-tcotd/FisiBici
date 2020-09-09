@@ -67,7 +67,7 @@ if (window.location.href == "http://fisi-bici.herokuapp.com/auth/signup") {
               });
         });
   }
-  else if (window.location.href == "http://fisi-bici.herokuapp.com/auth/singin") {
+  else if (window.location.href == "auth/singin") {
     /** Si el usuario está en página de INICIO DE SESIÓN */
     // debugger;
     // if(usuarioEsta == true){
