@@ -63,7 +63,7 @@ if (window.location.href == "http://fisi-bici.herokuapp.com/signup") {
 
                 alert('Bienvenido a FisiBici :D\nSe te redirigirá a la tienda.');
 
-                window.location.href = "{{ url_for('shop') }}"; console.log(datos);
+                window.location.href = "http://fisi-bici.herokuapp.com/shop"; console.log(datos);
               });
         });
   }
