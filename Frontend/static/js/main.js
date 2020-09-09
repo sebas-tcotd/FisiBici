@@ -111,7 +111,7 @@ if (window.location.href == "{{ url_for('singup') }}") {
         })
     });
 
-  } else if (window.location.href == {{ url_for('shop') }} ) {
+  } else if (window.location.href == "http://fisi-bici.herokuapp.com/shop" ) {
     /** Si el usuario está en la página de TIENDA */
     let keys, tarjetaBici, biciCard;
     peticion.getData("http://fisi-bici.herokuapp.com/bicycles")
