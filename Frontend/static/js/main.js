@@ -114,7 +114,7 @@ if (window.location.href == "http://fisi-bici.herokuapp.com/signup") {
   } else if (window.location.href == "http://fisi-bici.herokuapp.com/shop" ) {
     /** Si el usuario está en la página de TIENDA */
     let keys, tarjetaBici, biciCard;
-    peticion.getData({{ url_for('get_bicycles')}})
+    peticion.getData("http://fisi-bici.herokuapp.com/bicycles")
       .then(data => {
         keys = Object.values(data.bicycles);
         console.log(keys);
