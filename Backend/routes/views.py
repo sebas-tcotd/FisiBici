@@ -17,7 +17,7 @@ def create_routes_views(app):
 
     @app.route('/auth/sign-in')
     def sign_in():
-        return render_template('singin.html')
+        return render_template('signin.html')
 
     @app.route('/shop')
     def shop():
