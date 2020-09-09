@@ -11,7 +11,7 @@ import * as user from './user.js';
 //   });
 
 function setCors() {
-   let whitelist = ['http://fisi-bici.herokuapp.com/'];
+   let whitelist = ['http://fisi-bici.herokuapp.com'];
    let corsOptions = {
      origin: (origin, callback) => {
        if (whitelist.indexOf(origin) !== -1) {
