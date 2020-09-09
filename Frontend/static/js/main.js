@@ -10,26 +10,26 @@ import * as user from './user.js';
 //     //listadoBicis(data.bicycles);
 //   });
 
-function setCors() {
-  let whitelist = ['http://127.0.0.1:5500', 'http://127.0.0.1:5000'];
-  let corsOptions = {
-    origin: (origin, callback) => {
-      if (whitelist.indexOf(origin) !== -1) {
-        callback(null, true)
-      } else {
-        callback(new Error('Not allowed by CORS'))
-      }
-    },
-    credentials: true
-  }
-}
+// function setCors() {
+//   let whitelist = ['http://127.0.0.1:5500', 'http://127.0.0.1:5000'];
+//   let corsOptions = {
+//     origin: (origin, callback) => {
+//       if (whitelist.indexOf(origin) !== -1) {
+//         callback(null, true)
+//       } else {
+//         callback(new Error('Not allowed by CORS'))
+//       }
+//     },
+//     credentials: true
+//   }
+// }
 
-setCors();
+// setCors();
 user.deVisitanteToUser();
 let usuarioEsta;
 
 
-if (window.location.pathname == "/auth/singup") {
+if (window.location.href == "{{ url_for('singup') }}") {
   /** Si el usuario está en la página de REGISTRO */
   let formulario = document.querySelector("#appointment-form");
   formulario.addEventListener("submit", event => {
@@ -63,11 +63,11 @@ if (window.location.pathname == "/auth/singup") {
 
                 alert('Bienvenido a FisiBici :D\nSe te redirigirá a la tienda.');
 
-                window.location.pathname = "./shop.html"; console.log(datos);
+                window.location.href = "{{ url_for('shop') }}"; console.log(datos);
               });
         });
   }
-  else if (window.location.pathname == "/auth/singin") {
+  else if (window.location.href == "{{ url_for('singin') }}") {
     /** Si el usuario está en página de INICIO DE SESIÓN */
     // debugger;
     // if(usuarioEsta == true){
@@ -100,7 +100,7 @@ if (window.location.pathname == "/auth/singup") {
           if (datos.message != "Contraseña incorrecta") {
             user.deVisitanteToUser();
             //usuarioEsta = true;
-            window.location.pathname = "./shop.html";
+            window.location.href = "{{ url_for('shop') }}";
           } else {
             alert(datos.message + "\nIntente nuevamente.");
           }
@@ -111,7 +111,7 @@ if (window.location.pathname == "/auth/singup") {
         })
     });
 
-  } else if (window.location.pathname == "/shop") {
+  } else if (window.location.href == "{{ url_for('shop') }}") {
     /** Si el usuario está en la página de TIENDA */
     let keys, tarjetaBici, biciCard;
     peticion.getData("http://fisi-bici.herokuapp.com/bicycles")

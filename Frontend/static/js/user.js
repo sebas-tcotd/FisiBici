@@ -125,7 +125,7 @@ export function cerrarSesion(){
   deleteData('http://fisi-bici.herokuapp.com/user')
   .then(() => {
     window.location.reload();
-    window.location.pathname = './';
+    window.location.href = 'http://fisi-bici.herokuapp.com/';
   })
 }
 
