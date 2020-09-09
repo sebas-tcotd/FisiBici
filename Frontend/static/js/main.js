@@ -21,6 +21,7 @@ let usuarioEsta;
 
 
 if (window.location.href == "http://fisi-bici.herokuapp.com/auth/sign-up") {
+  console.log("Pagina de registro")
   /** Si el usuario está en la página de REGISTRO */
   let formulario = document.querySelector("#appointment-form");
   formulario.addEventListener("submit", event => {
