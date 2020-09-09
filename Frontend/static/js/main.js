@@ -2,14 +2,6 @@ import * as peticion from "./requests.js";
 import * as bici from "./bici.js";
 import * as user from './user.js';
 
-// let keys;
-// peticion.getData("http://localhost:5000/bicycles")
-//   .then(data => {
-//     keys = Object.values(data.bicycles);
-//     console.log(keys);
-//     //listadoBicis(data.bicycles);
-//   });
-
 function setCors() {
    let whitelist = ['http://fisi-bici.herokuapp.com'];
    let corsOptions = {
