@@ -29,7 +29,7 @@ user.deVisitanteToUser();
 let usuarioEsta;
 
 
-if (window.location.pathname == "/singup.html") {
+if (window.location.pathname == "/auth/singup") {
   /** Si el usuario está en la página de REGISTRO */
   let formulario = document.querySelector("#appointment-form");
   formulario.addEventListener("submit", event => {
@@ -67,7 +67,7 @@ if (window.location.pathname == "/singup.html") {
               });
         });
   }
-  else if (window.location.pathname == "/singin.html") {
+  else if (window.location.pathname == "/auth/singin") {
     /** Si el usuario está en página de INICIO DE SESIÓN */
     // debugger;
     // if(usuarioEsta == true){
@@ -111,7 +111,7 @@ if (window.location.pathname == "/singup.html") {
         })
     });
 
-  } else if (window.location.pathname == "/shop.html") {
+  } else if (window.location.pathname == "/shop") {
     /** Si el usuario está en la página de TIENDA */
     let keys, tarjetaBici, biciCard;
     peticion.getData("http://fisi-bici.herokuapp.com/bicycles")
