@@ -130,14 +130,3 @@ if (window.location.href == "http://fisi-bici.herokuapp.com/auth/signup") {
         alert('Cerró sesión\n', data);
       })
   })
-
-
-
-  // postData("http://localhost:5000/bicycles", {
-  //     "name": "333",
-  //     "price": 4000.0,
-  //     "stock": 1,
-  //     "colors": ["Amarillo"],
-  //     "img_path": "../img/bici2.jpg"
-  // })
-  // .then(data => console.log(data))
