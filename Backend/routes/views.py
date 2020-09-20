@@ -22,3 +22,7 @@ def create_routes_views(app):
     @app.route('/shop')
     def shop():
         return render_template('shop.html')
+
+    @app.route('/about')
+    def about():
+        return render_template('about.html')

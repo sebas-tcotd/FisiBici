@@ -19,8 +19,10 @@ function setCors() {
 user.deVisitanteToUser();
 let usuarioEsta;
 
+let ruta = document.getElementById('ruta');
 
-if (window.location.href == "http://fisi-bici.herokuapp.com/auth/sign-up") {
+
+if (window.location.href == `${ruta.getAttribute('href')}auth/sign-up`) {
   console.log("Pagina de registro")
   /** Si el usuario está en la página de REGISTRO */
   let formulario = document.querySelector("#appointment-form");
@@ -46,20 +48,20 @@ if (window.location.href == "http://fisi-bici.herokuapp.com/auth/sign-up") {
 
       console.log(formJSON);
 
-      peticion.postData('http://fisi-bici.herokuapp.com/register', formJSON)
+      peticion.postData(`${ruta.getAttribute('href')}register`, formJSON)
         .then(datos => {
-            peticion.postData('http://fisi-bici.herokuapp.com/login', formJSON)
+            peticion.postData(`${ruta.getAttribute('href')}login`, formJSON)
               .then(() => {
                   console.log('Datos enviados!');
                 });
 
                 alert('Bienvenido a FisiBici :D\nSe te redirigirá a la tienda.');
 
-                window.location.href = "http://fisi-bici.herokuapp.com/shop"; console.log(datos);
+                window.location.href = `${ruta.getAttribute('href')}shop`; console.log(datos);
               });
         });
   }
-  else if (window.location.href == "http://fisi-bici.herokuapp.com/auth/sign-in") {
+  else if (window.location.href == `${ruta.getAttribute('href')}auth/sign-in`) {
     /** Si el usuario está en página de INICIO DE SESIÓN */
     // debugger;
     // if(usuarioEsta == true){
@@ -84,7 +86,7 @@ if (window.location.href == "http://fisi-bici.herokuapp.com/auth/sign-up") {
 
       console.log(formJSON);
 
-      peticion.postData('http://fisi-bici.herokuapp.com/login', formJSON)
+      peticion.postData(`${ruta.getAttribute('href')}login`, formJSON)
         .then(datos => {
           console.log('Datos enviados!');
 
@@ -92,7 +94,7 @@ if (window.location.href == "http://fisi-bici.herokuapp.com/auth/sign-up") {
           if (datos.message != "Contraseña incorrecta") {
             user.deVisitanteToUser();
             //usuarioEsta = true;
-            window.location.href = "http://fisi-bici.herokuapp.com/shop";
+            window.location.href = `${ruta.getAttribute('href')}shop`;
           } else {
             alert(datos.message + "\nIntente nuevamente.");
           }
@@ -103,10 +105,10 @@ if (window.location.href == "http://fisi-bici.herokuapp.com/auth/sign-up") {
         })
     });
 
-  } else if (window.location.href == "http://fisi-bici.herokuapp.com/shop" ) {
+  } else if (window.location.href == `${ruta.getAttribute('href')}shop` ) {
     /** Si el usuario está en la página de TIENDA */
     let keys, tarjetaBici, biciCard;
-    peticion.getData("http://fisi-bici.herokuapp.com/bicycles")
+    peticion.getData(`${ruta.getAttribute('href')}bicycles`)
       .then(data => {
         keys = Object.values(data.bicycles);
         console.log(keys);
@@ -121,7 +123,7 @@ if (window.location.href == "http://fisi-bici.herokuapp.com/auth/sign-up") {
 
 
     let fondoModal = document.querySelector(".popup-img");
-    fondoModal.style.backgroundImage = "url(../img/bici4.jpg)";
+    fondoModal.style.backgroundImage = "{{ url_for('static', filename='img/bici2.jpg') }}";
   }
 
   document.querySelector('.cerrar-sesion').addEventListener("click", () => {

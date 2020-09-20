@@ -32,6 +32,7 @@
 </head>
 
 <body>
+  <div href="{{ url_for('index' , _external=True) }}" id="ruta"></div>
   <div class="barra clearfix">
     <div class="contenedor content-barra">
       <div class="logo">
@@ -42,7 +43,7 @@
       <nav class="navegacion-principal">
         <a href="{{ url_for('shop') }}">Bicicletas</a>
         <a href="#">Contacto</a>
-        <a href="#">Acerca de </a>
+        <a href="{{ url_for('about') }}">Acerca de </a>
         <div class="dropdown">
           <a href="#" id="top-nombre-user" data-toggle="dropdown"><i class="material-icons">account_circle</i></a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -125,9 +126,9 @@
         <a href="#" id="cerrar-sesion">Cerrar Sesión</a>
       </div>
     </div>
-    <a href="#" class="navBottom-link">
-      <i class="material-icons navBottom-icon">settings</i>
-      <span class="nav-text">Ajustes</span>
+    <a href="{{ url_for('about') }}" class="navBottom-link">
+      <i class="material-icons navBottom-icon">emoji_objects</i>
+      <span class="nav-text">Acerca de</span>
     </a>
   </nav> <!-- Bottom Nav Bar-->
 

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html class="no-js" lang="es">
 
 <head>
   <meta charset="utf-8">
@@ -32,12 +32,17 @@
 </head>
 
 <body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
   <div href="{{ url_for('index' , _external=True) }}" id="ruta"></div>
+
   <div class="barra clearfix">
     <div class="contenedor content-barra">
       <div class="logo">
-        <a href="{{ url_for('index') }}"><img
-            src="{{ url_for('static', filename='img/FisiBiciLogo.svg') }}" alt="Logo FisiBici"></a>
+        <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='img/FisiBiciLogo.svg') }}"
+            alt="Logo FisiBici"></a>
       </div>
 
       <nav class="navegacion-principal">
@@ -54,26 +59,49 @@
     </div>
   </div> <!-- Barra -->
 
-  <main id="inicio-sesion">
+  <!-- Aquí comienza la parte principal -->
+  <div class="contenedor">
+    <h1 class="title-h1">Acerca de nosotros</h1>
 
-    <div class="contenedor-formulario">
-      <form method="POST" class="appointment-form" id="appointment-form">
-        <h2>¡Qué alegría verte de nuevo!</h2>
-        <p>Ingresa tu correo y contraseña para que puedas acceder como usuario 😊</p>
-        <small>Si no tienes una cuenta, puedes <a
-            href="{{ url_for('sign_up') }}">crearte una</a>.</small>
-        <div class="form-group-1">
-          <input type="email" name="email" id="email" placeholder="Email" autocomplete="username" required />
-          <input type="password" name="password" id="password" placeholder="Contraseña" autocomplete="current-password"
-            required />
+    <p>Nosotros tres somos quienes estuvimos detrás de este proyecto, lo vimos nacer y crecer. Y ahora, en la recta
+      final de este trabajo, le deseamos lo mejor.</p>
+    <p>Este proyecto nos ayudó mucho a darnos cuenta en dónde está nuestro potencial, hasta dónde hemos podido llegar y
+      darnos cuenta de nuestra realidad. Que esto sea una marca de inicio para nuestros futuros proyectos en donde
+      nuestra modestia, humildad y capacidad florezcan como el resplandor de mil soles.</p>
+    <p>Sin más que decir por nuestra parte, a continuación se muestran a las personas que estuvieron detrás de todo
+      esto.</p>
 
-          <div class="form-submit">
-            <input type="submit" name="submit" id="submit" class="submit boton" value="Iniciar sesión" />
-          </div>
-      </form>
+    <div class="contenedor-authors">
+
+      <div class="card-author">
+        <a href="https://github.com/sebastcotd">
+          <img src="{{ url_for('static', filename='img/sebastianAuthor.png') }}" alt="Sebastian">
+        </a>
+
+        <h3>Sebastian Vargas <br> <span class="rol">Frontend</span></h3>
+      </div>
+
+      <div class="card-author">
+        <a href="https://github.com/Maurck">
+          <img src="{{ url_for('static', filename='img/mauricioAuthor.jpeg') }}" alt="Mauricio">
+        </a>
+
+        <h3>Mauricio Linares <br> <span class="rol">Backend</span></h3>
+      </div>
+
+      <div class="card-author">
+        <a href="https://github.com/MartinRC26">
+          <img src="{{ url_for('static', filename='img/martínAuthor.png') }}" alt="Martín">
+        </a>
+
+        <h3>Martín Rodríguez <br> <span class="rol">Logística</span></h3>
+      </div>
+
     </div>
 
-  </main>
+    <small id="only-3">Solo somos nosotros tres, en serio 🙂</small>
+
+  </div>
 
   <nav class="nav-bottom">
     <a href="{{ url_for('index') }}" class="navBottom-link navBottom-link-active">
@@ -109,37 +137,36 @@
       <small>SW2020504</small>
     </div>
   </div> <!-- Footer -->
-</body>
 
-<!-- Zona de scripts -->
-<script src="{{ url_for('static', filename='js/vendor/modernizr-3.11.2.min.js') }}"></script>
+
+  <!-- Zona de scripts -->
+  <script src="{{ url_for('static', filename='js/vendor/modernizr-3.11.2.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
   <script type="module" src="{{ url_for('static', filename='js/main.js') }}" defer></script>
 
-<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-<!-- 
-<script>
-  window.ga = function () {
-    ga.q.push(arguments)
-  };
-  ga.q = [];
-  ga.l = +new Date;
-  ga('create', 'UA-XXXXX-Y', 'auto');
-  ga('set', 'anonymizeIp', true);
-  ga('set', 'transport', 'beacon');
-  ga('send', 'pageview')
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('set', 'anonymizeIp', true);
+    ga('set', 'transport', 'beacon');
+    ga('send', 'pageview')
 
-</script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-</script>
-<script src="https://www.google-analytics.com/analytics.js" async></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-</script>
--->
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+</body>
 
 </html>

@@ -2,6 +2,7 @@ import {
   getData,
   deleteData
 } from './requests.js';
+let ruta = document.getElementById('ruta');
 
 /** Funciones de registro de usuario */
 function renderFirstName(formData) {
@@ -96,7 +97,7 @@ function letsGo() {
 export function deVisitanteToUser() {
   //debugger;
   let nombreUser;
-  getData('http://fisi-bici.herokuapp.com/user')
+  getData(`${ruta.getAttribute('href')}user`)
     .then(data => {
 
       if(data.message != "Ningun usuario ha iniciado sesion"){
@@ -122,10 +123,10 @@ export function deVisitanteToUser() {
 }
 
 export function cerrarSesion(){
-  deleteData('http://fisi-bici.herokuapp.com/user')
+  deleteData(`${ruta.getAttribute('href')}user`)
   .then(() => {
     window.location.reload();
-    window.location.href = 'http://fisi-bici.herokuapp.com/';
+    window.location.href = `${ruta.getAttribute('href')}`;
   })
 }
 
